@@ -1,0 +1,563 @@
+{
+  "personal": {
+    "name": "Karol Naze",
+    "age": 24,
+    "location": "Paris, France",
+    "title": "Software Engineer | Full-stack Developer | AI Engineer",
+    "email": "w.karolnaze@gmail",
+    "handle": "@Karolnaze",
+    "bio": "Hey 👋\n I’m Karol, a passionate software engineer specialized in backend, AI, and embedded systems, with experience in full-stack development. I enjoy turning complex ideas into clean, reliable software. ",
+    "avatar": "/profile.jpg",
+    "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
+  },
+
+ "education": [
+  {
+    "degree": "Engineering Degree – Computer Science & Embedded Systems",
+    "institution": "École d’Ingénieur Denis Diderot — Paris Cité University",
+    "duration": "2021 – 2024",
+    "graduationDate": "November 2024",
+    "achievements": [
+      "Graduated with honors (Top 2 of the class)",
+      "Valedictorian speaker – Graduation speech",
+      "Graduation project: Generative AI chatbot with OCR-based text extraction (Python, LangChain)",
+      "Presented AI project at the university tech fair 2024"
+    ]
+  },
+  {
+    "degree": "Preparatory Classes – MPSI (Maths & Computer Science)",
+    "institution": "Denis Diderot School of Engineering — Paris Cité University",
+    "duration": "2019 – 2021",
+    "achievements": [
+      "Admitted through entrance exam with merit-based scholarship (INSA Euro-Med program)"
+    ]
+  }
+],
+
+"experience": [
+  {
+    "company": "Freelance",
+    "position": "Full-Stack Software Engineer",
+    "type": "Freelance",
+    "duration": "September 2024 – september 2025",
+    "description": "Building web applications with backend APIs and AI-powered features while seeking a full-time software engineering role.",
+    "impact": [
+      "Delivered end-to-end tools for document search and onboarding automation",
+      "Worked independently with modern architectures and CI/CD best practices"
+    ],
+    "technologies": [
+      "Python", "FastAPI", "Django", "Node.js",
+      "React", "TypeScript",
+      "LangChain", "LLM", "Azure OpenAI",
+      "TensorFlow", "PyTorch",
+      "Docker", "GitHub Actions", "Azure", "AWS"
+    ]
+  },
+  {
+    "company": "CGI (EDF)",
+    "position": "AI Full-Stack Software Engineer",
+    "type": "Internship",
+    "duration": "Mar 2024 – Sep 2024",
+    "description": "Contributed to the development of an AI assistant to help EDF teams navigate energy efficiency regulations.",
+    "impact": [
+      "Reduced document search time by 70%",
+      "Achieved 92% accuracy on text extraction from 150+ scanned documents",
+      "Worked in an agile team with EDF experts to improve answer quality"
+    ],
+    "technologies": [
+      "Python", "LangChain", "LLM", "Azure OpenAI",
+      "TensorFlow", "FastAPI", "React", "Docker"
+    ]
+  },
+  {
+    "company": "Grupo TYPSA",
+    "position": "Software Engineer",
+    "type": "Internship",
+    "duration": "Jun 2023 – Sep 2023",
+    "description": "Worked on Hydro App, a tool for flood risk estimation and hydraulic infrastructure design.",
+    "impact": [
+      "Improved backend performance by 40%",
+      "Replaced Excel-based workflows, saving 120+ hours per year",
+      "Built a React dashboard, Node.js ingestion service, and Django modules"
+    ],
+    "technologies": [
+      "React", "Node.js", "Django", "PostgreSQL",
+      "CI/CD", "Git"
+    ]
+  },
+  {
+    "company": "EC Data Consulting (BMCE Bank)",
+    "position": "Software Developer",
+    "type": "Internship",
+    "duration": "Jul 2022 – Sep 2022",
+    "description": "Refactored a Java-based internal tool used by banking analysts.",
+    "impact": [
+      "Applied Clean Code and TDD principles to reduce technical debt",
+      "Redesigned the interface to improve user experience"
+    ],
+    "technologies": [
+      "Java", "TDD", "UX Design", "Design Patterns"
+    ]
+  }
+],
+  "skills": {
+    "programming": ["Python", "C", "C++", "Java", "JavaScript", "TypeScript", "C#"],
+    "backend_development": ["FastAPI", "Flask", "Django","Node.js","NestJS", "REST APIs"],
+    "frontend_development": ["React.js", "Angular", "HTML", "CSS"],
+    "databases_orm": ["PostgreSQL", "MongoDB", "TypeORM"],
+    "data_science": ["Pandas", "NumPy", "Matplotlib", "Automation(Script, ETL, Workflows)"],
+    "ml_computer_vision": ["PyTorch","TensorFlow","Scikit-learn", "XGBoost","OpenCV"],
+    "genai_ai": ["LLM","LangChain", "LangGraph", "OpenAI API"],
+    "cloud_devops": ["AWS","Azure","Docker","Kubernetes","Git","CI/CD","GitHub Actions"],
+    "scripting_tools": ["Bash", "Unix/Linux command line", "Shell scripting", "File system management", "Process control"],
+    "iot_embedded": ["Microcontroller Architectures","Real-Time Operating Systems (RTOS)", "Communication protocols", "Electronics & circuit basics"],
+    "soft_skills": ["Problem Solving", "Team Leadership", "Project Management", "Communication", "Learning Agility", "Innovation"]
+  },
+  "projects": [
+
+     {
+      "title": "AIPortfolio",
+      "category": "AI/Web Development",
+      "description": "Revolutionary AI-powered portfolio system: edit a single JSON file to get a complete interactive portfolio with an intelligent chatbot. Built with Next.js, React, and TypeScript. Features modern design, dynamic project showcases, and zero code required for updates.",
+      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "AI Integration"],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "Live Site",
+          "url": ""
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/WendyamKarol/portfolio/tree/main"
+        }
+      ],
+      "images": []
+    },
+
+    { 
+      "title": "Infrastructure Optimization Assistant",
+      "category": "AI / Backend / Monitoring",
+      "description": "A modular AI-powered application designed to analyze infrastructure monitoring data, detect technical anomalies (e.g., high CPU usage, latency spikes), and generate actionable optimization recommendations using GPT-4o. Built for SMEs to improve system performance and resilience.",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "OpenAI GPT-4o",
+        "React",
+        "Recharts",
+        "JSON",
+        "AsyncIO",
+        "REST API"
+      ],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "infra-optimizer-llm",
+          "url": "https://github.com/WendyamKarol/infra-optimizer-llm"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://github.com/WendyamKarol/infra-optimizer-llm/blob/main/react-frontend/public/Infra-Optimizer_demo.gif?raw=true",
+          "alt": "Live visualization of infrastructure anomalies and AI-generated recommendations"
+        },
+        {
+          "src": "https://github.com/WendyamKarol/infra-optimizer-llm/blob/main/react-frontend/public/API%20%20Detection%20d'anomalie.gif?raw=true",
+          "alt": "API endpoint handling data ingestion and anomaly detection"
+        }
+      ],
+      "achievements": [
+        "Modular multi-node architecture for ingestion, detection, and LLM-based recommendation.",
+        "Realtime analysis pipeline using FastAPI and async/await for LLM calls.",
+        "Structured separation of concerns via independent business logic modules.",
+        "Interactive frontend dashboard for uploading JSON, visualizing metrics, and receiving AI recommendations.",
+        "Robust error handling and fallback logic implemented in API endpoints.",
+        "Fully testable backend modules with unit test structure ready for pytest."
+      ]
+    },
+
+    {
+      "title": "AI Chatbot Assistant",
+      "category": "AI / NLP / Streamlit",
+      "description": "Query Bot is an AI-powered application that allows users to interact with multiple PDF documents using natural language. It leverages language models and semantic search to answer questions based on the actual content of uploaded PDFs.",
+      "techStack": [
+        "Python",
+        "Streamlit",
+        "OpenAI API",
+        "LangChain",
+        "FAISS",
+        "PyMuPDF",
+        "dotenv"
+      ],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/WendyamKarol/Langchain-QueryBot/tree/main/Query%20Bot"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://github.com/WendyamKarol/Langchain-QueryBot/blob/main/Query%20Bot/docs/ChatbotPDF.gif?raw=true",
+          "alt": "PDF text extraction and chunking process"
+        }
+      ],
+      "achievements": [
+        "Built a full-stack PDF chatbot using Streamlit and OpenAI GPT.",
+        "Extracted and chunked text from multiple PDFs for semantic processing.",
+        "Integrated vector search with FAISS for contextual retrieval.",
+        "Enabled natural language interaction with document content.",
+        "Used LangChain to manage prompt templates and memory.",
+        "Deployed locally with Streamlit CLI and .env-based key management."
+      ]
+   },
+
+
+    {
+      "title": "Full-Self Driving System Simulation",
+      "category": "Embedded Systems / Autonomous Vehicles",
+      "description": "Developed a 2D autonomous driving system in a simulated environment using the synchronous language Heptagon and C integration. The vehicle navigates a virtual city while respecting speed limits, traffic lights, and avoiding obstacles. Visualization handled via SDL2, with debugging and performance analysis tools integrated.",
+      "techStack": ["Python", "Pandas", "Matplotlib","Heptagon", "C", "SDL2", "Make", "GCC", "Git", "OPAM"],
+      "date": "2024",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/WendyamKarol/Synchronous_Control_System/tree/main/progsync-m2-eidd-23-24/progsync-m2-eidd-23-24/projet"  
+        }
+      ],
+      "images": [
+        {
+         "src": "https://github.com/WendyamKarol/Synchronous_Control_System/blob/main/progsync-m2-eidd-23-24/progsync-m2-eidd-23-24/projet/assets/FSD_Simulation_demo.gif?raw=true",
+         "alt": "Full-Self-Drive Demo"
+        }
+      ]
+    },
+
+    {
+        "title": "Tic Tac Toe",
+        "category": "Web Development / Frontend",
+        "description": "Tic Tac Toe is an interactive web app built with React. It allows two players to compete in a classic game of tic-tac-toe, with a simple, responsive, and user-friendly interface.",
+        "techStack": [
+          "JavaScript",
+          "React",
+          "HTML",
+          "CSS",
+          "React Router"
+        ],
+        "date": "2024",
+        "status": "Completed",
+        "featured": true,
+        "links": [
+          {
+            "name": "GitHub",
+            "url": "https://github.com/WendyamKarol/tictactoe"
+          },
+          {
+            "name": "Live Demo",
+            "url": "https://wendyamkarol.github.io/tictactoe"
+          }
+        ],
+        "images": [
+          {
+            "src": "https://raw.githubusercontent.com/WendyamKarol/tictactoe/master/src/assets/images/project-preview.png",
+            "alt": "Tic Tac Toe game preview"
+          }
+        ]
+    },
+
+    {
+      "title": "Smart Training Advisor",
+      "category": "AI / HR Tech / RAG System",
+      "description": "An intelligent training recommendation system powered by Retrieval-Augmented Generation (RAG). It analyzes employee skill assessments, detects competency gaps, and generates personalized training plans using GPT-4. Designed for HR teams seeking automated, insightful, and scalable workforce development strategies.",
+      "techStack": [
+        "Python",
+        "LangChain",
+        "OpenAI GPT-4",
+        "FAISS",
+        "FastAPI",
+        "Rich CLI"
+      ],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/WendyamKarol/RAG-DRH-Recommandations-RH-intelligentes"
+        }
+      ],
+      "images": []
+   },
+
+   {
+      "title": "Intelligent Document Analysis",
+      "category": "AI / Multimodal / RAG",
+      "description": "An advanced Retrieval-Augmented Generation (RAG) system that analyzes complex documents containing text, images, tables, and charts. Powered by LangChain, Unstructured, and GPT-4 Vision, it extracts and interprets multimodal data to answer user queries through a sleek Streamlit interface.",
+      "techStack": [
+        "Python",
+        "LangChain",
+        "Unstructured",
+        "GPT-4 Vision",
+        "Streamlit",
+        "FAISS"
+      ],
+      "date": "2025",
+      "status": "Completed",
+      "featured": true,
+      "links": [
+        {
+          "name": "GitHub",
+          "url": "https://github.com/WendyamKarol/Multimodal-Document-Intelligence-Pipeline_RAG/tree/main/RAG/NOTEBOOKS"
+        } 
+      ],
+      "images": []
+    },
+
+{
+  "title": "AstroControl",
+  "category": "Robotics / REST API",
+  "description": "AstroControl is a space robotics supervision system designed to control and monitor autonomous robots through a centralized dashboard. Built with Java, Spring, and PostgreSQL, it enables real-time mission creation, monitoring, and simulation. A RESTful API facilitates integration and robot communication, while unit testing ensures system robustness. This scalable solution supports mission simulation, alerts, and robot telemetry in a secure, modular architecture.",
+  "techStack": [
+    "Java",
+    "Spring",
+    "PostgreSQL",
+    "JUnit",
+    "REST API",
+    "Postman",
+    "JPA",
+    "IntelliJ IDEA"
+  ],
+  "date": "2024",
+  "status": "Completed",
+  "featured": true,
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/microservice_autonomous_space_robot"
+    }
+  ],
+  "images": []
+},
+
+{
+  "title": "Protecto-Cycle",
+  "category": "IoT",
+  "description": "Protecto-Cycle is a smart lighting system for bicycles that automates headlights and turn signals based on rider movements and surroundings. It uses motion detection and directional input to control front lights, brake lights, and blinkers for enhanced road safety. Designed with Arduino and Raspberry Pi, it merges energy efficiency with real-time responsiveness.",
+  "techStack": [
+    "Python",
+    "C++",
+    "Arduino",
+    "Raspberry Pi",
+    "PIR Sensors",
+    "IMU / Accelerometer",
+    "LEDs",
+    "Flask (for dashboard)"
+  ],
+  "date": "2024",
+  "status": "Completed",
+  "featured": true,
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/protecto-cycle"
+    }
+  ],
+  "images": []
+},
+
+{
+  "title": "Eliza Chatbot",
+  "category": "Artificial Intelligence",
+  "description": "A Lisp implementation of the classic Eliza chatbot, simulating a psychotherapist through pattern-matching rules and scripted dialogue. Inspired by the original 1966 MIT project, this version mimics conversational exchanges using symbolic AI techniques such as rule-based pattern matching and simple memory context.",
+  "techStack": [
+    "Common Lisp",
+    "Pattern Matching",
+    "Text Transformation",
+    "Rule-Based Systems"
+  ],
+  "date": "2024",
+  "status": "Completed",
+  "featured": false,
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/eliza_chatbot"
+    }
+  ],
+  "images": []
+},
+
+{
+  "title": "MetroFlow",
+  "category": "Algorithms / Java",
+  "description": "MetroFlow is a modular Java application that calculates optimal routes in a subway network. Developed with a Test-Driven Development (TDD) approach, it ensures robust, maintainable, and reliable code through comprehensive unit tests. Ideal for urban mobility simulations, the app computes shortest or fastest paths between stations with precision.",
+  "techStack": [
+    "Java",
+    "Gradle",
+    "JUnit",
+    "TDD",
+    "OOP",
+    "IntelliJ IDEA"
+  ],
+  "date": "2024",
+  "status": "Completed",
+  "featured": false,
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/subway_route_optimization" 
+    }
+  ],
+  "images": []
+},
+
+{
+  "title": "Smart Beverage Distribution Database System",
+  "category": "Database / Backend / SQL",
+  "description": "A robust relational database system designed for Liquide & Co to manage production, distribution, invoicing, and compliance of beverage logistics. It handles customers, suppliers, product types, geographic regions, subsidies, and enforces business rules using SQL functions, views, and triggers.",
+  "techStack": [
+    "PostgreSQL",
+    "SQL",
+    "Database Design",
+    "Triggers",
+    "UML Modeling"
+  ],
+  "date": "2023",
+  "status": "Completed",
+  "featured": false,
+  "links": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/database_management_posgreSQL"
+    }
+  ],
+  "images": []
+},
+
+   
+    
+  {
+    "title": "BookShop Management System",
+    "category": "C++ / MySQL",
+    "description": "A C++ application to manage a bookstore's inventory, suppliers, employees, purchases, and sales. The system interacts with a MySQL database to provide complete CRUD functionality, track purchases, generate invoices, and manage memberships.",
+    "techStack": ["C++", "MySQL", "SQL", "Object-Oriented Programming"],
+    "date": "2024",
+    "status": "Completed",
+    "featured": false,
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/WendyamKarol/Stack-Lab/tree/main/bookshop_management_cpp/Bookshop-Management-System-CPP-Project-master"
+      }
+    ],
+    "images": []
+  }
+],
+  "social": {
+    "linkedin": "https://linkedin.com/in/karol-naze",
+    "github": "https://github.com/WendyamKarol"
+  },
+  "job": {
+  "seeking": true,
+  "contractTypes": ["CDI", "CDD"],
+  "startDate": "September 2025",
+  "preferredLocation": "Remote or On-site",
+  "roles": ["Software Engineer","Full-stack Developer", "AI Engineer", "Backend Developer", "systems Engineer"],
+  "focusAreas": ["Backend Development",
+                "Full-stack Web Development",
+                "AI & Machine Learning",
+                "Cloud Infrastructure & DevOps",
+                "APIs & Microservices",
+                "System Architecture",
+                "Software Quality & Testing",
+                "Embedded Systems & IoT",
+                "Automation & Data Pipelines",
+                "Technical Problem Solving"
+              ],
+  "workStyle": "Curious and pragmatic, fast learner, collaborative mindset. Comfortable with Agile methods, iterative development, code reviews, and CI/CD practices.",
+  "goals": "I'm looking to join a software engineering team where I can build reliable backend systems, contribute to impactful applications, and apply my skills in AI and cloud technologies when needed. I want to keep learning and improving, while working on meaningful projects."
+},
+
+  "personality": {
+    "traits": ["passionate", "curious", "determined", "collaborative"],
+    "interests": ["AI/ML", "IoT", "Web Development", "Open Source", "Hackathons"],
+    "funFacts": [
+      "Smart India Hackathon finalist among 88,000+ teams",
+      "Built 25+ automation projects for global clients",
+      "Love solving complex problems with simple solutions"
+    ],
+    "workingStyle": "I move fast, learn faster, and love tackling challenging problems",
+    "motivation": "Building technology that makes a real impact on people's lives"
+  },
+  "resume": {
+    "title": "Karol Naze - Resume",
+    "description": "Software Engineer | Full-stack Developer | AI Engineer",
+    "fileType": "PDF",
+    "lastUpdated": " September 2025",
+    "fileSize": "2.1 MB",
+    "downloadUrl": "/Karol_Naze_Resume.pdf"
+  },
+  "chatbot": {
+    "name": "Karol",
+    "personality": "casual, enthusiastic, tech-savvy",
+    "tone": "friendly and conversational",
+    "language": "english",
+    "responseStyle": "short and interactive",
+    "useEmojis": true,
+    "topics": ["projects", "skills", "experience", "job", "contact", "fun_facts"]
+  },
+  "presetQuestions": {
+    "me": [
+      "Who are you?",
+      "Tell me about yourself",
+      "What's your background?",
+      "What are your passions?",
+      "How did you get started in tech?",
+      "Where do you see yourself in 5 years?"
+    ],
+    "professional": [
+      "What are your skills?",
+      "Can I see your resume?",
+      "What's your experience?",
+      "Are you looking for internships?",
+      "Am I available for opportunities?",
+      "What makes you a valuable team member?",
+      "Where are you working now?",
+      "Why should I hire you?",
+      "What's your educational background?",
+      "How was your experience working as freelancer?"
+    ],
+    "projects": [
+      "What projects are you most proud of?",
+      "What are your projects?",
+      "Tell me about your best project",
+      "What are you working on?"
+    ],
+    "contact": [
+      "How can I reach you?",
+      "How can I contact you?",
+      "What's your email?",
+      "Where can I find you online?",
+      "What kind of project would make you say 'yes' immediately?",
+      "Where are you located?"
+    ],
+    "fun": [
+      "What are your hobbies?",
+      "Tell me something interesting about you",
+      "What motivates you?"
+    ]
+  },
+  "meta": {
+    "configVersion": "1.0",
+    "lastUpdated": "2025-09-15",
+    "generatedBy": "Karol Naze",
+    "description": "Complete portfolio configuration for AI-powered portfolio website"
+  }
+}
