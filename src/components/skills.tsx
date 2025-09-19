@@ -5,6 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { motion } from 'framer-motion';
 import { Code, Cpu, PenTool, Users, Database, Cloud, Microchip, Brain } from 'lucide-react';
 import { getConfig } from '@/lib/config-loader';
+import { easeOut } from 'framer-motion';
+import { cubicBezier } from 'framer-motion';
+
+
+const easeBezier = cubicBezier(0.42, 0, 1, 1); // équivalent de easeOutExpo
+
 
 const Skills = () => {
   // Get skills from configuration
@@ -80,6 +86,9 @@ const Skills = () => {
     },
   ].filter(category => category.skills && category.skills.length > 0);
 
+
+
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,7 +105,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease:  easeOut },
     },
   };
 
@@ -105,7 +114,7 @@ const Skills = () => {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.3, ease: 'easeOut' },
+      transition: { duration: 0.3, ease: easeOut },
     },
   };
 
@@ -113,7 +122,7 @@ const Skills = () => {
     <motion.div
       initial={{ scale: 0.98, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
+      transition={{ duration: 0.6, ease: easeOut }}
       className="mx-auto w-full max-w-5xl rounded-4xl px-4 sm:px-6"
     >
       <Card className="w-full border-none px-0 pb-8 sm:pb-12 shadow-none">
@@ -149,7 +158,7 @@ const Skills = () => {
                   initial="hidden"
                   animate="visible"
                 >
-                  {section.skills.map((skill, idx) => (
+                  {section.skills.map((skill: string, idx: number) => (
                     <motion.div
                       key={idx}
                       variants={badgeVariants}

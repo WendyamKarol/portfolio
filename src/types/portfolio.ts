@@ -30,6 +30,8 @@ export interface Experience {
 }
 
 export interface Skills {
+  scripting_tools: any;
+  databases_orm: any;
   backend_development: any;
   frontend_development: any;
   data_science: any;
