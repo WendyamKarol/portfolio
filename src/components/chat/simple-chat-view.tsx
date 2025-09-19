@@ -6,7 +6,7 @@ import {
 } from '@/components/ui/chat/chat-bubble';
 import { ChatRequestOptions } from 'ai';
 import { Message } from 'ai/react';
-import { motion } from 'framer-motion';
+import { easeOut, motion } from 'framer-motion';
 import ChatMessageContent from './chat-message-content';
 import ToolRenderer from './tool-renderer';
 
@@ -25,7 +25,7 @@ const MOTION_CONFIG = {
   exit: { opacity: 0, y: 20 },
   transition: {
     duration: 0.3,
-    ease: 'easeOut',
+    ease: easeOut, // cubic-bezier for easeOut
   },
 };
 

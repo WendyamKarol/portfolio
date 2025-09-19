@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion,easeOut } from 'framer-motion';
 import { ArrowDownToLine, Download, Eye, File, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
@@ -29,7 +29,7 @@ export function Resume() {
         className="group relative overflow-hidden rounded-xl bg-accent p-0 transition-all duration-300 mb-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.0, ease: 'easeOut' }}
+        transition={{ duration: 0.0, ease: easeOut }}
       >
         {/* Details area */}
         <div className="p-5">

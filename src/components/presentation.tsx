@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion,easeOut } from 'framer-motion';
 import Image from 'next/image';
 import React from 'react';
 import { profileInfo } from '@/lib/config-loader';
@@ -15,7 +15,7 @@ export function Presentation() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' }, // use a valid easing string
+      transition: { duration: 0.6, ease: easeOut }, // use a valid easing string
     },
   };
 
@@ -27,7 +27,7 @@ export function Presentation() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: 'easeOut', // use a valid easing string
+        ease: easeOut, // use a valid easing string
         delay: 0.2,
       },
     },

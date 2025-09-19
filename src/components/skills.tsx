@@ -2,14 +2,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { motion,easeOut } from 'framer-motion';
 import { Code, Cpu, PenTool, Users, Database, Cloud, Microchip, Brain } from 'lucide-react';
 import { getConfig } from '@/lib/config-loader';
-import { easeOut } from 'framer-motion';
-import { cubicBezier } from 'framer-motion';
-
-
-const easeBezier = cubicBezier(0.42, 0, 1, 1); // équivalent de easeOutExpo
 
 
 const Skills = () => {
