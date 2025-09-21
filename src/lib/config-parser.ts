@@ -9,25 +9,24 @@ class ConfigParser {
 
   // --- Helpers Education ---
   private normalizeEducation(educationRaw: any): {
-    currentEdu?: {
+    Edu?: {
       degree?: string;
       institution?: string;
       location?: string;
       duration?: string;
       graduationDate?: string;
-      cgpa?: string;
     };
     educationHistory: string;
     achievements: string[];
   } {
     if (!educationRaw) {
-      return { currentEdu: undefined, educationHistory: "", achievements: [] };
+      return { Edu: undefined, educationHistory: "", achievements: [] };
     }
 
     // Cas 1: tableau
     if (Array.isArray(educationRaw)) {
       const list = educationRaw.filter(Boolean);
-      const currentEdu = list[0]; // on suppose trié du plus récent au plus ancien
+      const Edu = list[0]; // on suppose trié du plus récent au plus ancien
       const educationHistory = list
         .map((e: any) => {
           const left = [e.degree, e.institution].filter(Boolean).join(" – ");
@@ -35,7 +34,7 @@ class ConfigParser {
         })
         .filter(Boolean)
         .join(" · ");
-      return { currentEdu, educationHistory, achievements: [] };
+      return { Edu, educationHistory, achievements: [] };
     }
 
     // Cas 2: objet { current, previous, achievements }
@@ -53,7 +52,7 @@ class ConfigParser {
       .join(" · ");
 
     return {
-      currentEdu: educationRaw.current ?? list[0],
+      Edu: educationRaw.current ?? list[0],
       educationHistory,
       achievements: educationRaw.achievements ?? []
     };
@@ -64,15 +63,18 @@ class ConfigParser {
     academicPerfLine: string;
     achievementsLine: string;
   } {
-    const { currentEdu, educationHistory, achievements } = this.normalizeEducation(educationRaw);
+    const { Edu, educationHistory, achievements } = this.normalizeEducation(educationRaw);
 
     const educationLine =
       `- Education: ${educationHistory || "(not provided)"}`
-      + (currentEdu?.institution ? ` | Current: ${currentEdu.institution}` : "")
-      + (currentEdu?.graduationDate ? ` (graduating ${currentEdu.graduationDate})` : "");
+      + (Edu?.institution ? ` | degree from: ${Edu.institution}` : "")
+      + (Edu?.graduationDate ? ` (graduated ${Edu.graduationDate})` : "");
+
 
     const academicPerfLine =
-      currentEdu?.cgpa ? `- Academic Performance: CGPA ${currentEdu.cgpa}` : "";
+    achievements.some(a => a.toLowerCase().includes('honors')) 
+      ? `- Academic Performance: Graduated with honors`
+      : "";
 
     const achievementsLine =
       achievements?.length ? `- Achievements: ${achievements.join(', ')}` : "";

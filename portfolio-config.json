@@ -12,8 +12,24 @@
   },
 
  "education": [
+   {
+    "degree": "French Baccalauréat – Science Track (Mathematics Specialization)",
+    "institution": "Collège Saint Jean Baptiste de la Salle – Ouagadougou, Burkina Faso",
+    "duration": "2016 – 2019",
+    "achievements": [
+      "Graduated with distinction (Mention Bien)"
+    ]
+  },
   {
-    "degree": "Engineering Degree – Computer Science & Embedded Systems",
+    "degree": "Preparatory Classes –Mathematics & Computer Science)",
+    "institution": "Institute of Science and Technology (INSA Euro-Med), Euro Mediterranean University of Fez, Morocco",
+    "duration": "2019 – 2021",
+    "achievements": [
+      "Admitted through entrance exam with merit-based scholarship (INSA Euro-Med program)"
+    ]
+  },
+  {
+    "degree": "Engineering Degree – Computer Science",
     "institution": "École d’Ingénieur Denis Diderot — Paris Cité University",
     "duration": "2021 – 2024",
     "graduationDate": "November 2024",
@@ -22,14 +38,6 @@
       "Valedictorian speaker – Graduation speech",
       "Graduation project: Generative AI chatbot with OCR-based text extraction (Python, LangChain)",
       "Presented AI project at the university tech fair 2024"
-    ]
-  },
-  {
-    "degree": "Preparatory Classes – MPSI (Maths & Computer Science)",
-    "institution": "Denis Diderot School of Engineering — Paris Cité University",
-    "duration": "2019 – 2021",
-    "achievements": [
-      "Admitted through entrance exam with merit-based scholarship (INSA Euro-Med program)"
     ]
   }
 ],
@@ -487,11 +495,16 @@
 
   "personality": {
     "traits": ["passionate", "curious", "determined", "collaborative"],
-    "interests": ["AI/ML", "IoT", "Web Development", "Open Source", "Hackathons"],
+    "interests": ["AI/ML", "Web Development","IoT","Open Source", "Tech Innovation"],
     "funFacts": [
-      "Smart India Hackathon finalist among 88,000+ teams",
-      "Built 25+ automation projects for global clients",
-      "Love solving complex problems with simple solutions"
+      "Love solving complex problems with simple solutions",
+      "Enjoy hiking, photography, and exploring new tech",
+      "Tech enthusiast always exploring new tools and frameworks",
+      "Enjoy mentoring and sharing knowledge with others",
+      "Avid reader of sci-fi and tech blogs",
+      "Enjoy traveling and experiencing new cultures",
+      "Fitness enthusiast who loves hiking and outdoor adventures",
+      "Enjoy cooking and experimenting with new recipes"
     ],
     "workingStyle": "I move fast, learn faster, and love tackling challenging problems",
     "motivation": "Building technology that makes a real impact on people's lives"
