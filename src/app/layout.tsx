@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Karol Naze -  Software Engineer | Full-stack Developer & AI Engineer | Professional Portfolio",
+    default: "Karol Naze - Software Engineer | Full-stack Developer & AI Engineer | Professional Portfolio",
     template: "%s | Karol Naze Portfolio"
   },
   description: "Professional portfolio of Karol Naze - Software Engineer | Full-stack Developer | AI Engineer. Available for full-time opportunities.",
@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     "Django",
     "Automation",
     "LangChain",
-    "Smart India Hackathon",
     "Freelancer",
     "AI Chatbot",
     "Professional Portfolio",
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Karol Naze",
-      url: "",
+      url: "https://karolnaze.dev",
     },
   ],
   creator: "Karol Naze",
@@ -67,16 +66,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "",
-    title: "Karol Naze - Software Engineer | Full-stack Developer | AI Engineer | Professional Portfolio",
-    description: "Professional portfolio showcasing AI-powered projects, IoT systems, and full-stack development. SIH 2025 Finalist with 25+ automation projects. Available for full-time opportunities.",
+    url: "https://karolnaze.dev",
+    title: "Karol Naze - Software Engineer | Full-stack Developer | AI Engineer",
+    description: "Professional portfolio of Karol Naze — Software Engineer, Full-stack Developer & AI Engineer. Explore projects, skills, and availability through an AI-powered chat interface.",
     siteName: "Karol Naze Portfolio",
     images: [
       {
-        url: "",
-        width: 1200,
-        height: 630,
-        alt: "Karol Naze - Professional Portfolio with AI Chatbot",
+        url: "https://karolnaze.dev/portfolio.png",
+        width: 1156,
+        height: 816,
+        alt: "Karol Naze - Software Engineer Portfolio",
         type: "image/png",
       },
     ],
@@ -94,13 +93,10 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "",
+    canonical: "https://karolnaze.dev",
   },
   category: "technology",
   classification: "Portfolio Website",
-  other: {
-    "google-site-verification": "your-google-verification-code-here",
-  },
 };
 
 export default function RootLayout({
@@ -111,7 +107,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://karolnaze.dev" /> 
         <script
@@ -120,13 +116,13 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "karol naze",
+              "name": "Karol Naze",
               "jobTitle": "Software Engineer | Full-stack Developer | AI Engineer",
-              "url": "",
-              "image": "",
+              "url": "https://karolnaze.dev",
+              "image": "https://karolnaze.dev/profile.png",
               "sameAs": [
                 "https://github.com/WendyamKarol",
-                "https://linkedin.com/in/WendyamKarol",
+                "https://linkedin.com/in/karol-naze",
               ],
               "worksFor": {
                 "@type": "Organization",
@@ -145,7 +141,7 @@ export default function RootLayout({
                 "Automation",
                 "Full Stack Development"
               ],
-              "description": "Full-stack Python Developer & AI Engineer with expertise in building AI-powered solutions, IoT systems, and automation tools. "
+              "description": "Software Engineer & AI Engineer with expertise in building full-stack applications, AI-powered solutions, IoT systems, and automation tools."
             })
           }}
         />
@@ -160,6 +156,7 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           enableSystem={false}
+          disableTransitionOnChange
         >
           <main className="flex min-h-screen flex-col">
             {children}

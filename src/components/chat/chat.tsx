@@ -2,8 +2,9 @@
 import { useChat } from '@ai-sdk/react';
 import { AnimatePresence, motion, easeOut } from 'framer-motion';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 
 // Component imports
@@ -19,9 +20,7 @@ import {
 } from '@/components/ui/chat/chat-bubble';
 import HelperBoost from './HelperBoost';
 
-// ClientOnly component for client-side rendering
-//@ts-ignore
-const ClientOnly = ({ children }) => {
+function ClientOnly({ children }: { children: React.ReactNode }) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const ClientOnly = ({ children }) => {
   }
 
   return <>{children}</>;
-};
+}
 
 // Define Avatar component props interface
 interface AvatarProps {
@@ -53,10 +52,12 @@ const Avatar = dynamic<AvatarProps>(
             className="relative cursor-pointer"
             onClick={() => (window.location.href = '/')}
           >
-            <img
+            <Image
               src="/avatar.png"
               alt="Avatar"
-              className="h-full w-full object-cover object-[center_top_-5%] scale-95 rounded-full"
+              width={112}
+              height={112}
+              className="h-full w-full scale-95 rounded-full object-cover object-[center_top_-5%]"
             />
           </div>
         </div>
@@ -91,10 +92,8 @@ const Chat = () => {
     messages,
     input,
     handleInputChange,
-    handleSubmit,
     isLoading,
     stop,
-    setMessages,
     setInput,
     reload,
     addToolResult,
@@ -115,7 +114,7 @@ const Chat = () => {
       // Handle specific error types
       if (error.message?.includes('quota') || error.message?.includes('exceeded') || error.message?.includes('429')) {
         // Show a friendly notification for quota issues
-        toast.error('⚠️ API Quota Exhausted! Free Gemini API limit reached. Please contact karol directly or use preset questions. Thank you for understanding! 🙏', {
+        toast.error('⚠️ API Quota Exhausted! Free Gemini API limit reached. Please use preset questions or contact via email. Thank you for understanding! 🙏', {
           duration: 6000, // Show for 6 seconds
           style: {
             background: '#fef3c7',
@@ -133,7 +132,7 @@ const Chat = () => {
         try {
           append({
             role: 'assistant',
-            content: '⚠️ **API Quota Exhausted**\n\nFree Gemini API limit reached. Please contact karol directly or use preset questions below.',
+            content: '⚠️ **API Quota Exhausted**\n\nFree Gemini API limit reached. Please use preset questions below, or reach out directly via email.',
           });
         } catch (appendError) {
           console.error('Failed to append error message:', appendError);
@@ -146,10 +145,7 @@ const Chat = () => {
         setErrorMessage(`Error: ${error.message}`);
       }
     },
-    onToolCall: (tool) => {
-      const toolName = tool.toolCall.toolName;
-      console.log('Tool call:', toolName);
-    },
+    onToolCall: () => {},
   });
 
   const { currentAIMessage, latestUserMessage, hasActiveTool } = useMemo(() => {
@@ -194,56 +190,63 @@ const Chat = () => {
       )
   );
 
-  //@ts-ignore
-  const submitQuery = (query) => {
-    if (!query.trim() || isToolInProgress) return;
-    
-    // Clear any previous error message
-    setErrorMessage(null);
-    
-    // Check if this is a preset question first
-    if (presetReplies[query]) {
-      const preset = presetReplies[query];
-      setPresetReply({ question: query, reply: preset.reply, tool: preset.tool });
+  const submitQuery = useCallback(
+    (query: string) => {
+      if (!query.trim() || isToolInProgress) return;
+
+      setErrorMessage(null);
+
+      if (presetReplies[query]) {
+        const preset = presetReplies[query];
+        setPresetReply({
+          question: query,
+          reply: preset.reply,
+          tool: preset.tool,
+        });
+        setLoadingSubmit(false);
+        return;
+      }
+
+      setLoadingSubmit(true);
+      setPresetReply(null);
+      append({
+        role: 'user',
+        content: query,
+      });
+    },
+    [append, isToolInProgress]
+  );
+
+  const submitQueryToAI = useCallback(
+    (query: string) => {
+      if (!query.trim() || isToolInProgress) return;
+
+      setErrorMessage(null);
+      setLoadingSubmit(true);
+      setPresetReply(null);
+      append({
+        role: 'user',
+        content: query,
+      });
+    },
+    [append, isToolInProgress]
+  );
+
+  const handlePresetReply = useCallback(
+    (question: string, reply: string, tool: string) => {
+      setPresetReply({ question, reply, tool });
       setLoadingSubmit(false);
-      return;
-    }
-    
-    setLoadingSubmit(true);
-    setPresetReply(null); // Clear any preset reply when submitting new query
-    append({
-      role: 'user',
-      content: query,
-    });
-  };
+    },
+    []
+  );
 
-  //@ts-ignore
-  const submitQueryToAI = (query) => {
-    if (!query.trim() || isToolInProgress) return;
-    
-    // Clear any previous error message
-    setErrorMessage(null);
-    
-    // Force AI response, bypass preset checking
-    setLoadingSubmit(true);
-    setPresetReply(null);
-    append({
-      role: 'user',
-      content: query,
-    });
-  };
-
-  //@ts-ignore
-  const handlePresetReply = (question, reply, tool) => {
-    setPresetReply({ question, reply, tool });
-    setLoadingSubmit(false);
-  };
-
-  //@ts-ignore
-  const handleGetAIResponse = (question, tool) => {
-    setPresetReply(null);
-    submitQueryToAI(question); // Use the new function that bypasses presets
-  };
+  const handleGetAIResponse = useCallback(
+    (question: string) => {
+      setPresetReply(null);
+      submitQueryToAI(question);
+    },
+    [submitQueryToAI]
+  );
 
   useEffect(() => {
     if (initialQuery && !autoSubmitted) {
@@ -251,15 +254,17 @@ const Chat = () => {
       setInput('');
       submitQuery(initialQuery);
     }
-  }, [initialQuery, autoSubmitted]);
+  }, [initialQuery, autoSubmitted, setInput, submitQuery]);
 
-  //@ts-ignore
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!input.trim() || isToolInProgress) return;
-    submitQueryToAI(input); // User input should go directly to AI
-    setInput('');
-  };
+  const onSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!input.trim() || isToolInProgress) return;
+      submitQueryToAI(input);
+      setInput('');
+    },
+    [input, isToolInProgress, setInput, submitQueryToAI]
+  );
 
   const handleStop = () => {
     stop();
@@ -270,27 +275,16 @@ const Chat = () => {
   const isEmptyState =
     !currentAIMessage && !latestUserMessage && !loadingSubmit && !presetReply && !errorMessage;
 
-  // Calculate header height based on hasActiveTool
-  const headerHeight = hasActiveTool ? 100 : 180;
-
   return (
-    <div className="relative h-screen overflow-hidden">
-      {/* Fixed Avatar Header with Gradient */}
-      <div
-        className="fixed top-0 right-0 left-0 z-50"
-        style={{
-          background:
-            'linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 30%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%)',
-        }}
-      >
+    <div className="relative flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+      {/* Avatar header — sticky within chat section only (not viewport-fixed) */}
+      <div className="sticky top-0 z-10 shrink-0 bg-gradient-to-b from-background via-background/90 to-transparent">
         <div
           className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
         >
           <div className="flex justify-center">
             <ClientOnly>
-              <Avatar
-                hasActiveTool={hasActiveTool}
-              />
+              <Avatar hasActiveTool={hasActiveTool} />
             </ClientOnly>
           </div>
 
@@ -317,12 +311,9 @@ const Chat = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="container mx-auto flex h-full max-w-3xl flex-col">
+      <div className="container mx-auto flex min-h-0 flex-1 max-w-3xl flex-col">
         {/* Scrollable Chat Content */}
-        <div
-          className="flex-1 overflow-y-auto px-2 pb-4"
-          style={{ paddingTop: `${headerHeight}px` }}
-        >
+        <div className="flex-1 overflow-y-auto px-2 pb-4">
           <AnimatePresence mode="wait">
             {isEmptyState ? (
               <motion.div
@@ -370,8 +361,9 @@ const Chat = () => {
                       
                       <div className="text-sm text-amber-800 dark:text-amber-200 space-y-2">
                         <p>
-                          Hi! I'm currently using the <strong>free version</strong> of Google's Gemini API, 
-                          and today's quota has been reached.
+                          Hi! I&apos;m currently using the{' '}
+                          <strong>free version</strong> of Google&apos;s Gemini API, and
+                          today&apos;s quota has been reached.
                         </p>
                         
                         <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-lg mt-3">
@@ -445,11 +437,10 @@ const Chat = () => {
         </div>
 
         {/* Fixed Bottom Bar */}
-        <div className="sticky bottom-0 bg-white px-2 pt-3 md:px-0 md:pb-4">
+        <div className="sticky bottom-0 bg-background px-2 pt-3 md:px-0 md:pb-4">
           <div className="relative flex flex-col items-center gap-3">
-            <HelperBoost 
-              submitQuery={submitQuery} 
-              setInput={setInput} 
+            <HelperBoost
+              submitQuery={submitQuery}
               handlePresetReply={handlePresetReply}
             />
             <ChatBottombar

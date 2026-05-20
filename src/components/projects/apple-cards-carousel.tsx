@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image, { ImageProps } from 'next/image';
 import React, {
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useRef,
@@ -201,7 +202,12 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
+
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  }, [onCardClose, index]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -218,18 +224,13 @@ export const Card = ({
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open]);
+  }, [open, handleClose]);
 
-  //@ts-ignore
+  // @ts-expect-error useOutsideClick callback ref typing
   useOutsideClick(containerRef, () => handleClose());
 
   const handleOpen = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
   };
 
   return (

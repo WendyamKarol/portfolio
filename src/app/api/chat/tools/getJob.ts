@@ -29,13 +29,15 @@ export const getJob = tool({
       skills: {
         technical: [
           ...config.skills.programming,
-          ...config.skills.ml_ai,
-          ...config.skills.web_development,
-          ...config.skills.databases,
-          ...config.skills.devops_cloud,
-          ...config.skills.iot_hardware
+          ...config.skills.backend_development,
+          ...config.skills.frontend_development,
+          ...config.skills.databases_orm,
+          ...config.skills.ml_computer_vision,
+          ...config.skills.genai_ai,
+          ...config.skills.cloud_devops,
+          ...config.skills.iot_embedded,
         ],
-        soft: [
+        soft: config.skills.soft_skills || [
           "Team Leadership", "Project Management", "Problem Solving", 
           "Communication", "Adaptability", "Innovation"
         ]

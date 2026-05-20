@@ -10,16 +10,22 @@ export const getPresentation = tool({
     const config = getConfig();
     
     return {
-      presentation: config.personal.bio,
       name: config.personal.name,
       title: config.personal.title,
-      age: config.personal.age,
       location: config.personal.location,
-      education: config.education[0]?.degree + ' from ' + config.education[0]?.institution,
+      languages: config.personal.languages ?? [],
+      bio: config.personal.bio,
+      education: config.education.map(edu => ({
+        degree: edu.degree,
+        institution: edu.institution,
+        duration: edu.duration,
+        achievements: edu.achievements ?? []
+      })),
       traits: config.personality.traits,
       interests: config.personality.interests,
       motivation: config.personality.motivation,
-      professionalSummary: "Thank you for asking! I'm a dedicated software developer with a strong passion for technology and innovation. My journey in tech has been driven by curiosity and a desire to create solutions that make a real impact. Through my academic studies combined with practical experience via internships and freelance work, I've developed both a solid theoretical foundation and hands-on problem-solving skills. I'm particularly drawn to challenges that require creative thinking and technical excellence. I thrive in collaborative environments where I can contribute to innovative projects while continuously learning and growing. My ultimate goal is to work on meaningful projects that leverage cutting-edge technology to solve real-world problems. I'm excited about the possibility of bringing my skills and enthusiasm to your team."
+      certifications: config.skills.certifications ?? [],
+      professionalSummary: "I'm Karol Naze — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd, scholarship via competitive exam) then in Paris where I graduated Top 2 of my class at École Denis Diderot and delivered the valedictorian speech in 2024. Since then, I've shipped production-grade AI systems: a RAG chatbot for EDF, autonomous agents at Devoteam, and a mobile app deployed on the App Store. I hold certifications from Google, Microsoft (Azure AI-102), and AWS. I'm available immediately and looking for Data & AI engineering roles."
     };
   },
 });

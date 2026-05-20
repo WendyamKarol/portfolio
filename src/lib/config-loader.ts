@@ -5,7 +5,7 @@ import ConfigParser from './config-parser';
 let portfolioConfig: PortfolioConfig;
 
 try {
-  // Import JSON configuration
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   portfolioConfig = require('../../portfolio-config.json') as PortfolioConfig;
 } catch (error) {
   console.error('Failed to load portfolio configuration:', error);

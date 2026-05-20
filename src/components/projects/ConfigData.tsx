@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { Image as Img } from 'lucide-react';
 import { ChevronRight, Link } from 'lucide-react';
-import { Separator } from '@/components/ui/separator';
 import { projectData, getConfig } from '@/lib/config-loader';
 
 // Get project content from configuration

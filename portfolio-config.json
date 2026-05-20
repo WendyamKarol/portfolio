@@ -3,40 +3,49 @@
     "name": "Karol Naze",
     "age": 24,
     "location": "Paris, France",
-    "title": "Software Engineer | Full-stack Developer | AI Engineer",
-    "email": "w.karolnaze@gmail",
+    "title": "Software Engineer | AI | Automation",
+    "email": "w.karolnaze@gmail.com",
+    "phone": "+33 765745766",
     "handle": "@Karolnaze",
-    "bio": "Hey 👋\n I’m Karol, a passionate software engineer specialized in backend, AI, and embedded systems, with experience in full-stack development. I enjoy turning complex ideas into clean, reliable software. ",
-    "avatar": "/profile.jpg",
+    "languages": [
+      { "language": "French", "level": "Native" },
+      { "language": "English", "level": "Fluent — TOEIC 860/990" },
+      { "language": "Spanish", "level": "B2" }
+    ],
+    "bio": "Hey 👋 I’m Karol — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd) then in Paris (École Denis Diderot, Paris Cité University), where I graduated Top 2 of my class and delivered the valedictorian speech in 2024. I build LLM-powered applications, agentic pipelines, and APIs that go from prototype to production. Available immediately for Data & AI roles.",
+    "avatar": "/profile.png",
     "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
   },
 
  "education": [
    {
     "degree": "French Baccalauréat – Science Track (Mathematics Specialization)",
-    "institution": "Collège Saint Jean Baptiste de la Salle – Ouagadougou, Burkina Faso",
+    "institution": "Collège Saint Jean Baptiste de la Salle – Ouagadougou",
     "duration": "2016 – 2019",
     "achievements": [
       "Graduated with distinction (Mention Bien)"
     ]
   },
   {
-    "degree": "Preparatory Classes –Mathematics & Computer Science)",
-    "institution": "Institute of Science and Technology (INSA Euro-Med), Euro Mediterranean University of Fez, Morocco",
+    "degree": "Preparatory Classes – Mathematics & Computer Science",
+    "institution": "INSA Euro-Méditerranée (7th INSA in France) — Université Euro-Méditerranéenne de Fès, Morocco",
     "duration": "2019 – 2021",
     "achievements": [
-      "Admitted through entrance exam with merit-based scholarship (INSA Euro-Med program)"
+      "Scholarship obtained through a competitive entrance exam organized by the Euro-Mediterranean University of Fez",
+      "Rigorous two-year preparatory program in Mathematics and Computer Science"
     ]
   },
   {
-    "degree": "Engineering Degree – Computer Science",
+    "degree": "Engineering Degree – Systems Engineering (Informatique & Systèmes)",
     "institution": "École d’Ingénieur Denis Diderot — Paris Cité University",
     "duration": "2021 – 2024",
     "graduationDate": "November 2024",
     "achievements": [
       "Graduated with honors (Top 2 of the class)",
-      "Valedictorian speaker – Graduation speech",
-      "Graduation project: Generative AI chatbot with OCR-based text extraction (Python, LangChain)",
+      "Valedictorian speaker — delivered the graduation speech on behalf of the class",
+      "Broad engineering curriculum: Algorithms & Data Structures, Machine Learning, AI, Cybersecurity, Web & Mobile Development",
+      "Final year specialization: Embedded Systems & IoT",
+      "Graduation project: Generative AI chatbot with OCR-based document extraction (Python, LangChain)",
       "Presented AI project at the university tech fair 2024"
     ]
   }
@@ -44,37 +53,49 @@
 
 "experience": [
   {
-    "company": "Freelance",
-    "position": "Full-Stack Software Engineer",
-    "type": "Freelance",
-    "duration": "September 2024 – september 2025",
-    "description": "Building web applications with backend APIs and AI-powered features while seeking a full-time software engineering role.",
+    "company": "Devoteam AI Apps",
+    "position": "AI Engineer — AI-Powered Fullstack",
+    "type": "Full-time",
+    "duration": "February 2026 – May 2026",
+    "description": "Design and development of commercializable AI accelerators for the consulting firm and its clients. Operated as an AI-Powered Fullstack Engineer — from architecture to production delivery. Delivered multiple production-grade GenAI systems within 5 months.",
     "impact": [
-      "Delivered end-to-end tools for document search and onboarding automation",
-      "Worked independently with modern architectures and CI/CD best practices"
+      "Market Intelligence — autonomous AI agent for strategic web monitoring and executive briefings (Gemini Deep Research, LangGraph)",
+      "AO Crawler — real-time tender detection pipeline with NLP analysis and automated alerting",
+      "Eko (Devoteam Global AI Hackathon) — agentic knowledge capitalisation suite; technical lead; 3rd worldwide — Jury Award & People Award"
     ],
     "technologies": [
-      "Python", "FastAPI", "Django", "Node.js",
-      "React", "TypeScript",
-      "LangChain", "LLM", "Azure OpenAI",
-      "TensorFlow", "PyTorch",
-      "Docker", "GitHub Actions", "Azure", "AWS"
+      "Python", "LangGraph", "Gemini", "LangChain", "NLP", "Web Scraping", "FastAPI"
+    ]
+  },
+  {
+    "company": "Freelance (Micro-entrepreneur)",
+    "position": "Full-Stack Software Engineer — AI & Freelance",
+    "type": "Freelance",
+    "duration": "September 2024 – Present",
+    "description": "Launched as micro-entrepreneur after CGI internship to deepen AI expertise and explore an entrepreneurial path across Europe and Africa. Delivered diverse projects spanning mobile apps, multimodal AI pipelines, and web development.",
+    "impact": [
+      "SegMe — mobile reservation app (Planity-style) for the West African market, deployed on App Store & Google Play. Fullstack contribution: React Native, Node.js, PostgreSQL, Stripe",
+      "Multimodal extraction engine — text and image extraction pipeline for unstructured documents (GPT-4o Vision, FastAPI, LangChain, FAISS, Azure)",
+      "Custom web projects — showcase and corporate sites, web apps (React, Next.js), SEO optimization, Shopify e-commerce integrations"
+    ],
+    "technologies": [
+      "Python", "FastAPI", "Django", "Node.js", "React", "Next.js", "React Native", "TypeScript",
+      "LangChain", "LLM", "GPT-4o", "Azure OpenAI", "FAISS", "Docker", "GitHub Actions", "Stripe", "Shopify"
     ]
   },
   {
     "company": "CGI (EDF)",
-    "position": "AI Full-Stack Software Engineer",
+    "position": "AI Engineer Consultant",
     "type": "Internship",
     "duration": "Mar 2024 – Sep 2024",
-    "description": "Contributed to the development of an AI assistant to help EDF teams navigate energy efficiency regulations.",
+    "description": "Joined CGI's Paris Energies Utilities & Communications (PEUCS) business unit at La Défense, Puteaux. Worked as AI Engineer Consultant on two GenAI MVPs for EDF — during the early boom of generative AI (GPT-3.5 era).",
     "impact": [
-      "Reduced document search time by 70%",
-      "Achieved 92% accuracy on text extraction from 150+ scanned documents",
-      "Worked in an agile team with EDF experts to improve answer quality"
+      "Designed and developed a RAG chatbot on EDF's regulatory corpus — architecture vectorielle, recontextualisation des requêtes (LangChain, ChromaDB, Azure OpenAI GPT-3.5)",
+      "Integrated an OCR pipeline (PyTorch + TensorFlow) achieving 94% recognition rate on 200+ documents",
+      "Requirements gathering with EDF domain experts and sprint reviews delivery"
     ],
     "technologies": [
-      "Python", "LangChain", "LLM", "Azure OpenAI",
-      "TensorFlow", "FastAPI", "React", "Docker"
+      "Python", "LangChain", "ChromaDB", "Azure OpenAI", "PyTorch", "TensorFlow", "FastAPI", "React", "Docker"
     ]
   },
   {
@@ -82,44 +103,74 @@
     "position": "Software Engineer",
     "type": "Internship",
     "duration": "Jun 2023 – Sep 2023",
-    "description": "Worked on Hydro App, a tool for flood risk estimation and hydraulic infrastructure design.",
+    "description": "Typsa Digital Solutions (TDS), Madrid, Spain — led the migration of a critical business tool from a fragmented Excel/VBA ecosystem to a centralized, performant and scalable web architecture.",
     "impact": [
-      "Improved backend performance by 40%",
-      "Replaced Excel-based workflows, saving 120+ hours per year",
-      "Built a React dashboard, Node.js ingestion service, and Django modules"
+      "Migrated VBA statistical calculation engines to Python (NumPy) — eliminated Excel dependency and automated analyses",
+      "SQL query optimization and Django algorithm refactor — processing latency cut by nearly half (-40%)",
+      "Built React dashboard and Node.js data ingestion service"
     ],
     "technologies": [
-      "React", "Node.js", "Django", "PostgreSQL",
-      "CI/CD", "Git"
+      "Python", "NumPy", "Django", "React", "Node.js", "PostgreSQL", "CI/CD"
     ]
   },
   {
-    "company": "EC Data Consulting (BMCE Bank)",
-    "position": "Software Developer",
+    "company": "Compétences Tutorat",
+    "position": "Mathematics Tutor",
+    "type": "Student job",
+    "duration": "2022 – 2023",
+    "description": "Private mathematics tutoring for secondary and preparatory class students in Paris.",
+    "impact": [
+      "Adapted teaching methods to individual student profiles",
+      "Strengthened communication and pedagogical skills"
+    ],
+    "technologies": []
+  },
+  {
+    "company": "STAND UP",
+    "position": "Reception Agent",
+    "type": "Student job",
+    "duration": "2022 – 2023",
+    "description": "Reception and guest services at major European trade fairs in Paris (International Agriculture Show, Paris Motor Show, etc.).",
+    "impact": [
+      "Professional client-facing experience in high-traffic event environments",
+      "Team coordination during large-scale international exhibitions"
+    ],
+    "technologies": []
+  },
+  {
+    "company": "EC Data Consulting",
+    "position": "Software Developer — Data Management",
     "type": "Internship",
     "duration": "Jul 2022 – Sep 2022",
-    "description": "Refactored a Java-based internal tool used by banking analysts.",
+    "description": "First internship in France, Créteil — refactored internal Java tool for banking analysts under Elie Chemali, Data Architect.",
     "impact": [
-      "Applied Clean Code and TDD principles to reduce technical debt",
-      "Redesigned the interface to improve user experience"
+      "Java tool refactor with Clean Code principles",
+      "UX/UI redesign following best practices; discovered IHM design",
+      "Strengthened Java programming and software craftsmanship"
     ],
     "technologies": [
-      "Java", "TDD", "UX Design", "Design Patterns"
+      "Java", "Clean Code", "UX Design", "IHM", "Design Patterns"
     ]
   }
 ],
   "skills": {
     "programming": ["Python", "C", "C++", "Java", "JavaScript", "TypeScript", "C#"],
-    "backend_development": ["FastAPI", "Flask", "Django","Node.js","NestJS", "REST APIs"],
-    "frontend_development": ["React.js", "Angular", "HTML", "CSS"],
-    "databases_orm": ["PostgreSQL", "MongoDB", "TypeORM"],
+    "backend_development": ["FastAPI", "Flask", "Django", "SpringBoot", "Node.js", "NestJS", "REST APIs"],
+    "frontend_development": ["React.js", "Next.js", "React Native", "Angular", "HTML", "CSS"],
+    "databases_orm": ["PostgreSQL", "MongoDB", "Redis", "MariaDB", "TypeORM"],
     "data_science": ["Pandas", "NumPy", "Matplotlib", "Automation(Script, ETL, Workflows)"],
     "ml_computer_vision": ["PyTorch","TensorFlow","Scikit-learn", "XGBoost","OpenCV"],
-    "genai_ai": ["LLM","LangChain", "LangGraph", "OpenAI API"],
-    "cloud_devops": ["AWS","Azure","Docker","Kubernetes","Git","CI/CD","GitHub Actions"],
+    "genai_ai": ["LLM", "LangChain", "LangGraph", "OpenAI API", "Azure OpenAI", "Gemini", "RAG", "Prompt Engineering", "Agentic AI"],
+    "cloud_devops": ["Azure", "AWS (EC2, SageMaker)", "GCP (Vertex AI)", "Docker", "Kubernetes", "Terraform", "Git", "CI/CD", "GitHub Actions"],
     "scripting_tools": ["Bash", "Unix/Linux command line", "Shell scripting", "File system management", "Process control"],
     "iot_embedded": ["Microcontroller Architectures","Real-Time Operating Systems (RTOS)", "Communication protocols", "Electronics & circuit basics"],
-    "soft_skills": ["Teamwork", "Problem solving", "Fast Learning", "Intellectual curiosity", "Effective communication"]
+    "soft_skills": ["Teamwork", "Problem solving", "Fast Learning", "Intellectual curiosity", "Effective communication"],
+    "certifications": [
+      "Google Cloud Generative AI Leader",
+      "Microsoft Azure AI Engineer Associate (AI-102)",
+      "AWS Certified Cloud Practitioner"
+    ],
+    "methods": ["System Design", "OOP", "Hexagonal Architecture", "Design Patterns", "Agile/Scrum"]
   },
   "projects": [
 
@@ -474,37 +525,37 @@
   },
   "job": {
   "seeking": true,
-  "contractTypes": ["CDI", "CDD"],
-  "startDate": "September 2025",
-  "preferredLocation": "Remote or On-site",
-  "roles": ["Software Engineer","Full-stack Developer", "AI Engineer", "Backend Developer", "systems Engineer"],
-  "focusAreas": ["Backend Development",
-                "Full-stack Web Development",
-                "AI & Machine Learning",
-                "Cloud Infrastructure & DevOps",
-                "APIs & Microservices",
-                "System Architecture",
-                "Software Quality & Testing",
-                "Embedded Systems & IoT",
-                "Automation & Data Pipelines",
-                "Technical Problem Solving"
-              ],
-  "workStyle": "Curious and pragmatic, fast learner, collaborative mindset. Comfortable with Agile methods, iterative development, code reviews, and CI/CD practices.",
-  "goals": "I'm looking to join a software engineering team where I can build reliable backend systems, contribute to impactful applications, and apply my skills in AI and cloud technologies when needed. I want to keep learning and improving, while working on meaningful projects."
+  "contractTypes": ["CDI", "CDD", "Freelance"],
+  "startDate": "Immediately",
+  "availability": "Available immediately — actively looking for new opportunities in Data & AI",
+  "preferredLocation": "Remote or On-site (Paris area)",
+  "roles": ["AI Engineer", "Data & AI Engineer", "AI Technical Solutions Specialist", "AI Architect", "AI-Powered Fullstack Engineer", "Full-Stack Developer with GenAI focus"],
+  "focusAreas": [
+    "LLM Integration & GenAI Systems",
+    "Agentic AI & LangGraph Pipelines",
+    "RAG Architecture & Vector Search",
+    "Backend Development (Python, FastAPI, Django)",
+    "Data Pipelines & Automation",
+    "Cloud AI Solutions (Azure, AWS)",
+    "AI Solution Architecture",
+    "Full-Stack Development (React + API)",
+    "MLOps & AI Industrialization",
+    "Technical AI Consulting & Workshops"
+  ],
+  "workStyle": "Curious and pragmatic — I move fast, learn faster. Comfortable in agile teams, client-facing environments, and hands-on delivery from PoC to production. I adapt the right tool to each problem.",
+  "goals": "I'm looking for a Data & AI engineering role where I can design and ship production-grade AI systems — LLM integrations, agentic pipelines, RAG architectures — and contribute to high-impact projects. I want to work with teams that take AI seriously and help companies turn prototypes into real, scalable products."
 },
 
   "personality": {
     "traits": ["passionate", "curious", "determined", "collaborative"],
     "interests": ["AI/ML", "Web Development","IoT","Open Source", "Tech Innovation"],
     "funFacts": [
-      "Love solving complex problems with simple solutions",
-      "Enjoy hiking, photography, and exploring new tech",
-      "Tech enthusiast always exploring new tools and frameworks",
-      "Enjoy mentoring and sharing knowledge with others",
-      "Avid reader of sci-fi and tech blogs",
-      "Enjoy traveling and experiencing new cultures",
-      "Fitness enthusiast who loves hiking and outdoor adventures",
-      "Enjoy cooking and experimenting with new recipes"
+      "Black belt in Taekwondo",
+      "Currently reading Zero to One by Peter Thiel",
+      "Fitness enthusiast — weightlifting and outdoor adventures",
+      "Passionate traveler — studied across 3 countries, now based in Paris",
+      "Love solving complex problems with simple, elegant solutions",
+      "Tech enthusiast always exploring new tools and frameworks"
     ],
     "workingStyle": "I move fast, learn faster, and love tackling challenging problems",
     "motivation": "Building technology that makes a real impact on people's lives"
@@ -513,7 +564,7 @@
     "title": "Karol Naze - Resume",
     "description": "Software Engineer | Full-stack Developer | AI Engineer",
     "fileType": "PDF",
-    "lastUpdated": " September 2025",
+    "lastUpdated": "2025",
     "fileSize": "2.1 MB",
     "downloadUrl": "/Karol_Naze_Resume.pdf"
   },
@@ -531,45 +582,372 @@
       "Who are you?",
       "Tell me about yourself",
       "What's your background?",
-      "What are your passions?",
-      "How did you get started in tech?",
-      "Where do you see yourself in 5 years?"
+      "How did you get into AI?",
+      "Where do you see yourself in 3 years?"
     ],
     "professional": [
       "What are your skills?",
       "Can I see your resume?",
-      "What's your experience?",
-      "Are you looking for internships?",
-      "Am I available for opportunities?",
-      "What makes you a valuable team member?",
-      "Where are you working now?",
+      "What's your AI and data experience?",
+      "What makes you a strong AI engineer?",
+      "Are you open to new roles?",
+      "Why did you leave Devoteam?",
       "Why should I hire you?",
       "What's your educational background?",
-      "How was your experience working as freelancer?"
+      "What was your biggest professional achievement?",
+      "Do you have experience with Azure OpenAI?"
     ],
     "projects": [
       "What projects are you most proud of?",
-      "What are your projects?",
-      "Tell me about your best project",
-      "What are you working on?"
+      "Tell me about your RAG and LLM projects",
+      "Tell me about the Eko hackathon project",
+      "Have you shipped AI to production?"
     ],
     "contact": [
       "How can I reach you?",
-      "How can I contact you?",
-      "What's your email?",
-      "Where can I find you online?",
-      "What kind of project would make you say 'yes' immediately?",
+      "What kind of opportunity would excite you?",
+      "Are you available immediately?",
       "Where are you located?"
     ],
     "fun": [
-      "What are your hobbies?",
+      "What motivates you?",
       "Tell me something interesting about you",
-      "What motivates you?"
+      "What do you do outside of work?"
+    ]
+  },
+  "landing": {
+    "tagline": "Software Engineer",
+    "highlight": "AI · Automation",
+    "valueProposition": "I design and ship software, AI features, and automations that help teams move faster."
+  },
+  "careerJourney": {
+    "enabled": true,
+    "avatarMarkerSrc": "/avatar.png",
+    "intro": {
+      "headline": { "fr": "Mon parcours", "en": "My Journey" },
+      "subheadline": {
+        "fr": "Du Burkina Faso à Paris — ingénieur full-stack & IA",
+        "en": "From Burkina Faso to Paris — full-stack & AI engineer"
+      },
+      "ctaLabel": { "fr": "Découvrir mon parcours", "en": "Explore my journey" },
+      "skipIntroLabel": { "fr": "Passer l'intro", "en": "Skip intro" }
+    },
+    "map": {
+      "style": "mapbox://styles/mapbox/dark-v11",
+      "idleCenter": [0, 20],
+      "idleZoom": 1.5,
+      "segmentDurationMs": 2000,
+      "stepPauseMs": 2500
+    },
+    "steps": [
+      {
+        "id": "ouaga-bac",
+        "order": 0,
+        "type": "education",
+        "city": "Ouagadougou",
+        "country": { "fr": "Burkina Faso", "en": "Burkina Faso" },
+        "countryCode": "BF",
+        "lat": 12.3714,
+        "lng": -1.5197,
+        "period": "2016 – 2019",
+        "title": { "fr": "Baccalauréat scientifique", "en": "Scientific Baccalaureate" },
+        "organization": "Collège Saint Jean-Baptiste de la Salle",
+        "summary": {
+          "fr": "Mention Bien — Sciences, spécialité Mathématiques",
+          "en": "Honors (Mention Bien) — Science track, Mathematics"
+        },
+        "recruiterSkills": ["Mathématiques", "Sciences", "Rigueur académique"],
+        "detail": {
+          "description": {
+            "fr": "Née et grandie au Burkina Faso. Bac scientifique avec mention Bien.",
+            "en": "Born and raised in Burkina Faso. Scientific Baccalaureate with honors."
+          },
+          "highlights": [
+            { "fr": "Mention Bien", "en": "Graduated with honors" }
+          ],
+          "technologies": []
+        },
+        "cvRef": { "section": "education", "index": 0 }
+      },
+      {
+        "id": "fez-insa",
+        "order": 1,
+        "type": "education",
+        "city": "Fès",
+        "country": { "fr": "Maroc", "en": "Morocco" },
+        "countryCode": "MA",
+        "lat": 34.0181,
+        "lng": -5.0078,
+        "period": "2019 – 2021",
+        "title": { "fr": "Classes préparatoires", "en": "Preparatory Classes" },
+        "organization": "INSA Euromed — UEMF",
+        "summary": {
+          "fr": "Bourse concours UEMF — Mathématiques & Informatique",
+          "en": "UEMF scholarship — Mathematics & Computer Science"
+        },
+        "recruiterSkills": ["Mathématiques", "Informatique", "Autonomie"],
+        "detail": {
+          "description": {
+            "fr": "Classes préparatoires INSA Euromed avec bourse méritée.",
+            "en": "INSA Euromed preparatory classes with merit scholarship."
+          },
+          "highlights": [
+            { "fr": "Bourse UEMF", "en": "UEMF scholarship" }
+          ],
+          "technologies": []
+        },
+        "cvRef": { "section": "education", "index": 1 }
+      },
+      {
+        "id": "paris-studies",
+        "order": 2,
+        "type": "education",
+        "city": "Paris",
+        "country": { "fr": "France", "en": "France" },
+        "countryCode": "FR",
+        "lat": 48.842,
+        "lng": 2.343,
+        "period": "2021 – 2024",
+        "title": { "fr": "Ingénieur systèmes", "en": "Systems Engineer" },
+        "organization": "École Denis Diderot — Paris Cité",
+        "summary": {
+          "fr": "École Denis Diderot · Hub — stages aller-retour puis carrière IA",
+          "en": "École Denis Diderot · Hub — round-trip internships then AI career"
+        },
+        "recruiterSkills": ["Python", "Machine Learning", "Systèmes embarqués"],
+        "detail": {
+          "description": {
+            "fr": "3 ans à l'EIDD : hub école — chaque stage part de l'école et y revient (Créteil L1, Madrid L2, CGI L3).",
+            "en": "3 years at EIDD: school hub — each internship leaves from school and returns (Créteil Y1, Madrid Y2, CGI Y3)."
+          },
+          "highlights": [
+            { "fr": "Top 2 promotion · Valedictorian", "en": "Top 2 of class · Valedictorian" },
+            { "fr": "3 stages aller-retour depuis l'école", "en": "3 round-trip internships from school" }
+          ],
+          "technologies": ["Python", "LangChain", "C", "C++", "RTOS"]
+        },
+        "cvRef": { "section": "education", "index": 2 }
+      },
+      {
+        "id": "creteil-ecdata",
+        "order": 3,
+        "type": "internship",
+        "sideTrip": true,
+        "sideTripFromId": "paris-studies",
+        "returnsToHubId": "paris-studies",
+        "city": "Créteil",
+        "country": { "fr": "France", "en": "France" },
+        "countryCode": "FR",
+        "lat": 48.7904,
+        "lng": 2.4556,
+        "period": "Jul – Sep 2022",
+        "title": { "fr": "Stage EC Data", "en": "EC Data Internship" },
+        "organization": "EC Data Consulting",
+        "summary": {
+          "fr": "1ère année · Refonte Java · Retour à l'école",
+          "en": "Year 1 · Java refactor · Back to school"
+        },
+        "recruiterSkills": ["Java", "Clean Code", "UX"],
+        "detail": {
+          "description": {
+            "fr": "Premier stage en France pendant la 1ère année. Créteil → école.",
+            "en": "First internship in France during year 1. Créteil → back to school."
+          },
+          "highlights": [
+            { "fr": "Clean Code sur outil legacy", "en": "Clean Code on legacy tool" },
+            { "fr": "Tuteur Elie Chemali, Data Architect", "en": "Mentor Elie Chemali, Data Architect" }
+          ],
+          "technologies": ["Java", "Clean Code", "UX Design"]
+        },
+        "cvRef": { "section": "experience", "index": 6 }
+      },
+      {
+        "id": "madrid-typsa",
+        "order": 4,
+        "type": "internship",
+        "sideTrip": true,
+        "sideTripFromId": "paris-studies",
+        "returnsToHubId": "paris-studies",
+        "city": "Madrid",
+        "country": { "fr": "Espagne", "en": "Spain" },
+        "countryCode": "ES",
+        "lat": 40.4168,
+        "lng": -3.7038,
+        "period": "Jun – Sep 2023",
+        "title": { "fr": "Stage TYPSA", "en": "TYPSA Internship" },
+        "organization": "Grupo TYPSA — TDS",
+        "summary": {
+          "fr": "2ème année · Excel/VBA → Python/Django · Retour à l'école",
+          "en": "Year 2 · Excel/VBA → Python/Django · Back to school"
+        },
+        "recruiterSkills": ["Python", "Django", "React"],
+        "detail": {
+          "description": {
+            "fr": "Stage international en 2ème année. Madrid → retour Paris pour finir le cursus.",
+            "en": "International internship in year 2. Madrid → back to Paris to finish the degree."
+          },
+          "highlights": [
+            { "fr": "Migration VBA → Python", "en": "VBA → Python migration" },
+            { "fr": "120+ h/an économisées", "en": "120+ hours/year saved" }
+          ],
+          "technologies": ["Python", "Django", "React", "PostgreSQL"]
+        },
+        "cvRef": { "section": "experience", "index": 3 }
+      },
+      {
+        "id": "puteaux-cgi",
+        "order": 5,
+        "type": "internship",
+        "sideTrip": true,
+        "sideTripFromId": "paris-studies",
+        "returnsToHubId": "paris-studies",
+        "city": "Puteaux",
+        "country": { "fr": "France", "en": "France" },
+        "countryCode": "FR",
+        "lat": 48.8847,
+        "lng": 2.2389,
+        "period": "Mar – Sep 2024",
+        "title": { "fr": "Stage CGI / EDF", "en": "CGI / EDF Internship" },
+        "organization": "CGI — La Défense",
+        "summary": {
+          "fr": "3ème année · IA générative · RAG · Retour diplôme",
+          "en": "Year 3 · Generative AI · RAG · Back to graduate"
+        },
+        "recruiterSkills": ["RAG", "LangChain", "OCR"],
+        "detail": {
+          "description": {
+            "fr": "Entrée dans l'IA chez CGI/EDF pendant la dernière année. La Défense → retour école → diplôme nov. 2024.",
+            "en": "Entered AI at CGI/EDF during final year. La Défense → back to school → graduated Nov 2024."
+          },
+          "highlights": [
+            { "fr": "Chatbot RAG + OCR 94%", "en": "RAG chatbot + 94% OCR" },
+            { "fr": "Azure OpenAI · ChromaDB", "en": "Azure OpenAI · ChromaDB" }
+          ],
+          "technologies": ["Python", "LangChain", "ChromaDB", "Azure OpenAI", "React"]
+        },
+        "cvRef": { "section": "experience", "index": 2 }
+      },
+      {
+        "id": "paris-freelance",
+        "order": 6,
+        "type": "freelance",
+        "city": "Paris",
+        "country": { "fr": "France", "en": "France" },
+        "countryCode": "FR",
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "period": "Sep 2024 – Present",
+        "title": { "fr": "Micro-entrepreneur IA", "en": "AI Micro-entrepreneur" },
+        "organization": "Freelance",
+        "summary": {
+          "fr": "Diplômé · Quitte l'école · IA générative Europe & Afrique",
+          "en": "Graduated · Left school · Generative AI across Europe & Africa"
+        },
+        "recruiterSkills": ["FastAPI", "LLM", "Full-stack"],
+        "detail": {
+          "description": {
+            "fr": "Après le diplôme : lancement freelance pour approfondir l'IA générative. Statut micro-entrepreneur actif.",
+            "en": "After graduation: launched freelance to deepen generative AI. Active micro-entrepreneur status."
+          },
+          "highlights": [
+            { "fr": "Apps web & APIs end-to-end", "en": "End-to-end web apps & APIs" },
+            { "fr": "Pipelines document/RAG clients", "en": "Document/RAG pipelines for clients" }
+          ],
+          "technologies": ["Python", "FastAPI", "React", "LangChain", "LLM"]
+        },
+        "cvRef": { "section": "experience", "index": 1 }
+      },
+      {
+        "id": "puteaux-devoteam",
+        "order": 7,
+        "type": "job",
+        "city": "Puteaux",
+        "country": { "fr": "France", "en": "France" },
+        "countryCode": "FR",
+        "lat": 48.892,
+        "lng": 2.252,
+        "period": "Fév 2026 – Mai 2026",
+        "title": { "fr": "Ingénieur IA", "en": "AI Engineer" },
+        "organization": "Devoteam AI Apps",
+        "summary": {
+          "fr": "Accélérateurs IA · 3e mondial Hackathon Devoteam",
+          "en": "AI accelerators · Devoteam Hackathon 3rd worldwide"
+        },
+        "recruiterSkills": ["LangGraph", "Gemini", "NLP"],
+        "detail": {
+          "description": {
+            "fr": "Conception d'accélérateurs IA commercialisables : Market Intelligence, AO Crawler, Eko (Hackathon).",
+            "en": "Design of commercializable AI accelerators: Market Intelligence, AO Crawler, Eko (Hackathon)."
+          },
+          "highlights": [
+            { "fr": "Market Intelligence — agent veille", "en": "Market Intelligence — monitoring agent" },
+            { "fr": "Eko — 3e mondial · Jury & People Award", "en": "Eko — 3rd worldwide · Jury & People Award" }
+          ],
+          "technologies": ["Python", "LangGraph", "Gemini", "LangChain", "FastAPI"]
+        },
+        "cvRef": { "section": "experience", "index": 0 }
+      }
+    ],
+    "testimonials": [
+      {
+        "id": "testi-ecdata",
+        "stepId": "creteil-ecdata",
+        "quote": { "fr": "[À compléter]", "en": "[À compléter]" },
+        "author": "Elie Chemaly",
+        "role": { "fr": "Data Architect", "en": "Data Architect" },
+        "company": "EC Data Consulting",
+        "documentUrl": "/recommendations/ecdata-stage-1a-2022.pdf",
+        "documentLabel": {
+          "fr": "Grille d'évaluation officielle — rapport de stage 1A (2021-2022)",
+          "en": "Official evaluation grid — 1st-year internship report (2021-2022)"
+        }
+      },
+      {
+        "id": "testi-typsa",
+        "stepId": "madrid-typsa",
+        "quote": { "fr": "[À compléter]", "en": "[À compléter]" },
+        "author": "Grupo TYPSA",
+        "role": { "fr": "Évaluation de stage", "en": "Internship evaluation" },
+        "company": "Grupo TYPSA",
+        "documentUrl": "/recommendations/stage-2a-2022-2023.pdf",
+        "documentLabel": {
+          "fr": "Grille d'évaluation officielle — rapport de stage 2A (2022-2023)",
+          "en": "Official evaluation grid — 2nd-year internship report (2022-2023)"
+        }
+      },
+      {
+        "id": "testi-cgi",
+        "stepId": "puteaux-cgi",
+        "quote": {
+          "fr": "Karol a su faire preuve d'une grande curiosité sur des sujets assez complexes de l'usage de l'IA au service des métiers. J'ai particulièrement apprécié son niveau d'autonomie, son professionnalisme mais surtout sa capacité d'abstraction pour décrire et expliquer ses travaux. Encore merci pour ton travail au sein de CGI.",
+          "en": "Karol has demonstrated great curiosity on complex topics related to the use of AI to support business lines. I particularly appreciated his level of autonomy, his professionalism, but above all his ability to abstract and explain his work. Thank you again for your work at CGI."
+        },
+        "author": "Rabeh BEL HADAOUI",
+        "role": {
+          "fr": "Vice-Président, Conseil Services",
+          "en": "Vice President, Consulting Services"
+        },
+        "company": "CGI"
+      },
+      {
+        "id": "testi-devoteam",
+        "stepId": "puteaux-devoteam",
+        "quote": {
+          "fr": "Karol est un jeune ingénieur IA avec un bel avenir devant lui. Ce qui le distingue, c'est sa capacité à rester pragmatique face aux défis. Toujours de bonne humeur et agréable à côtoyer, il s'intègre parfaitement dans une équipe technique. C'est un atout précieux que je continuerai à suivre de près !",
+          "en": "Karol is a young AI engineer with a bright future ahead of him. What sets him apart is his ability to stay pragmatic when facing challenges. Always in good spirits and easy to work with, he fits perfectly into a technical team. He's a strong asset whom I'll continue to follow closely!"
+        },
+        "author": "Frederic Simons",
+        "role": {
+          "fr": "Co-fondateur & Expert IA",
+          "en": "Co-founder & AI Expert"
+        },
+        "company": "Lean Startup (Devoteam)"
+      }
     ]
   },
   "meta": {
-    "configVersion": "1.0",
-    "lastUpdated": "2025-09-15",
+    "configVersion": "1.1",
+    "lastUpdated": "2026-05-01",
     "generatedBy": "Karol Naze",
     "description": "Complete portfolio configuration for AI-powered portfolio website"
   }

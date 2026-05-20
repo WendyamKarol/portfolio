@@ -1,8 +1,15 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'mapbox-gl': 'mapbox-gl',
+    };
+    return config;
+  },
   images: {
     remotePatterns: [
-      // Common image hosting services
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'assets.aceternity.com' },
       { protocol: 'https', hostname: 'raw.githubusercontent.com' },
@@ -13,9 +20,8 @@ const nextConfig = {
     ],
   },
   eslint: {
-    // Ne bloque PAS le build en cas d'erreurs eslint
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

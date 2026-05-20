@@ -1,4 +1,5 @@
 // src/components/chat/tool-renderer.tsx
+import type { ComponentProps } from 'react';
 import { Contact } from '../contact';
 import AvailabilityCard from '../AvailabilityCard';
 import { Presentation } from '../presentation';
@@ -6,14 +7,19 @@ import AllProjects from '../projects/AllProjects';
 import Resume from '../resume';
 import Skills from '../skills';
 
+/** Minimal shape for completed tool invocations from the chat UI. */
+export interface ToolRendererInvocation {
+  toolCallId: string;
+  toolName: string;
+  result?: unknown;
+}
+
 interface ToolRendererProps {
-  toolInvocations: any[];
-  messageId: string;
+  toolInvocations: ToolRendererInvocation[];
 }
 
 export default function ToolRenderer({
   toolInvocations,
-  messageId,
 }: ToolRendererProps) {
   return (
     <div className="w-full transition-all duration-300">
@@ -63,10 +69,14 @@ export default function ToolRenderer({
               </div>
             );
 
-          case 'getInternship':
+          case 'getJob':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
-                <AvailabilityCard data={tool.result} />
+                <AvailabilityCard
+                  data={
+                    tool.result as ComponentProps<typeof AvailabilityCard>['data']
+                  }
+                />
               </div>
             );
 

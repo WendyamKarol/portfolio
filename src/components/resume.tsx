@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
-import { motion,easeOut } from 'framer-motion';
-import { ArrowDownToLine, Download, Eye, File, ExternalLink } from 'lucide-react';
-import Image from 'next/image';
+import React from 'react';
+import { motion, easeOut } from 'framer-motion';
+import { Download, File, ExternalLink } from 'lucide-react';
 
 export function Resume() {
   // Resume details
@@ -53,7 +52,7 @@ export function Resume() {
             {/* Download button */}
             <motion.button
               onClick={handleDownload}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white hover:bg-black/80 transition-colors"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               title="Download PDF"
@@ -69,23 +68,23 @@ export function Resume() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.2 }}
-        className="w-full rounded-xl overflow-hidden border bg-white shadow-lg"
+        className="w-full rounded-xl overflow-hidden border border-border bg-card shadow-lg"
       >
-        <div className="bg-gray-100 px-4 py-2 flex items-center justify-between border-b">
+        <div className="bg-muted px-4 py-2 flex items-center justify-between border-b border-border">
           <div className="flex items-center gap-2">
-            <File className="h-4 w-4 text-gray-600" />
-            <span className="text-sm font-medium text-gray-700">Resume Preview</span>
+            <File className="h-4 w-4 text-muted-foreground" />
+            <span className="text-sm font-medium text-foreground">Resume Preview</span>
           </div>
           <button
             onClick={handleDownload}
-            className="flex items-center gap-1 px-3 py-1 text-xs bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-1 px-3 py-1 text-xs bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
           >
             <ExternalLink className="h-3 w-3" />
             Open Full
           </button>
         </div>
         
-        <div className="w-full h-[600px] bg-gray-50">
+        <div className="w-full h-[600px] bg-muted/50">
           <iframe
             src={resumeDetails.downloadUrl}
             width="100%"

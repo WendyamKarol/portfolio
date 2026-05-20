@@ -22,8 +22,10 @@ export const getSkills = tool({
         MLComputerVision: config.skills.ml_computer_vision,
         generativeAI: config.skills.genai_ai,
         cloudDevOps: config.skills.cloud_devops,
-        IoTEmbeddedSystems: config.skills.iot_embedded
+        IoTEmbeddedSystems: config.skills.iot_embedded,
+        methodsAndPrinciples: config.skills.methods ?? [],
       },
+      certifications: config.skills.certifications ?? [],
       
       education: config.education.map((edu) => ({
         degree: edu.degree,
@@ -42,8 +44,8 @@ export const getSkills = tool({
         technologies: exp.technologies,
         description: exp.description,
       })),
-      message: 
-      "I'd be happy to walk you through my technical skills and expertise. I've built a diverse skill set across multiple domains through both my academic coursework and hands-on project experience. I'm particularly passionate about machine learning and full-stack development, where I've been able to apply these technologies to solve real-world problems. Each area of my expertise has been strengthened through practical application - from building end-to-end web applications to developing ML models for complex data analysis. I believe my combination of theoretical knowledge and practical experience, along with my enthusiasm for continuous learning, would allow me to contribute effectively to your team. What specific technical areas would you like me to elaborate on?"
+      message:
+      "My core expertise is in AI engineering and backend development. On the AI side: LLM integration, RAG systems, agentic workflows with LangGraph, and multimodal pipelines. On the backend: Python (FastAPI, Django), Node.js, and REST API design. I'm also certified on the major cloud platforms — Azure AI Engineer (AI-102), Google Cloud Generative AI Leader, and AWS Certified Cloud Practitioner. I use the right tool for each problem and pick up new technologies fast — happy to go deeper on any specific area."
     };
   },
 });

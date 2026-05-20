@@ -62,7 +62,7 @@ export function Presentation() {
         </div>
 
         {/* Text content section */}
-        <div className="flex flex-col space-y">
+        <div className="flex flex-col space-y-4">
           <motion.div
             initial="hidden"
             animate="visible"
