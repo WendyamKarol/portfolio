@@ -21,23 +21,30 @@ export default function CareerGlobePreview() {
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
+    if (!mapboxgl.accessToken) return;
+
     const config = getConfig();
     const journey = config.careerJourney;
     if (!journey) return;
 
     const steps = getSortedSteps(journey);
 
-    const map = new mapboxgl.Map({
-      container: containerRef.current,
-      style: journey.map.style,
-      projection: 'globe',
-      center: journey.map.idleCenter,
-      zoom: 1.35,
-      pitch: 0,
-      bearing: 0,
-      interactive: false,
-      attributionControl: false,
-    });
+    let map: mapboxgl.Map;
+    try {
+      map = new mapboxgl.Map({
+        container: containerRef.current,
+        style: journey.map.style,
+        projection: 'globe',
+        center: journey.map.idleCenter,
+        zoom: 1.35,
+        pitch: 0,
+        bearing: 0,
+        interactive: false,
+        attributionControl: false,
+      });
+    } catch {
+      return;
+    }
     mapRef.current = map;
 
     map.on('load', () => {

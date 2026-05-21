@@ -241,6 +241,7 @@ export default function CareerMap({
   // Init map once
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
+    if (!mapboxgl.accessToken) return;
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
