@@ -2,23 +2,24 @@
 
 import React from 'react';
 import { motion, easeOut } from 'framer-motion';
-import { Download, File, ExternalLink } from 'lucide-react';
+import { Download } from 'lucide-react';
+import { resumeDetails as configResumeDetails } from '@/lib/config-loader';
 
 export function Resume() {
-  // Resume details
   const resumeDetails = {
-    title: "Karol's Resume",
-    description: 'Software Engineer • AI Engineer • Full-stack Developer',
-    fileType: 'PDF',
-    lastUpdated: 'September 2025',
-    fileSize: '0.5 MB',
-    previewImageSrc: '/karol_resume_preview.png', // You'll need to add this image
-    downloadUrl: 'https://wendyamkarol.github.io/karol-naze-html-resume',
+    title: configResumeDetails.title || "Karol's Resume",
+    description: configResumeDetails.description || 'Software Engineer • AI Engineer • Full-stack Developer',
+    fileType: configResumeDetails.fileType || 'PDF',
+    lastUpdated: configResumeDetails.lastUpdated || '2025',
+    fileSize: configResumeDetails.fileSize || '',
+    downloadUrl: configResumeDetails.downloadUrl,
   };
 
   const handleDownload = () => {
-    // For external URLs, open in a new tab
-    window.open(resumeDetails.downloadUrl, '_blank');
+    const link = document.createElement('a');
+    link.href = resumeDetails.downloadUrl;
+    link.download = resumeDetails.downloadUrl.split('/').pop() || 'resume.pdf';
+    link.click();
   };
 
   return (
@@ -63,37 +64,6 @@ export function Resume() {
         </div>
       </motion.div>
 
-      {/* PDF Preview - Always Visible */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        className="w-full rounded-xl overflow-hidden border border-border bg-card shadow-lg"
-      >
-        <div className="bg-muted px-4 py-2 flex items-center justify-between border-b border-border">
-          <div className="flex items-center gap-2">
-            <File className="h-4 w-4 text-muted-foreground" />
-            <span className="text-sm font-medium text-foreground">Resume Preview</span>
-          </div>
-          <button
-            onClick={handleDownload}
-            className="flex items-center gap-1 px-3 py-1 text-xs bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-          >
-            <ExternalLink className="h-3 w-3" />
-            Open Full
-          </button>
-        </div>
-        
-        <div className="w-full h-[600px] bg-muted/50">
-          <iframe
-            src={resumeDetails.downloadUrl}
-            width="100%"
-            height="100%"
-            className="border-0"
-            title="Resume Preview"
-          />
-        </div>
-      </motion.div>
     </div>
   );
 }

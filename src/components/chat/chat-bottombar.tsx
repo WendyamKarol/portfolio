@@ -16,6 +16,7 @@ interface ChatBottombarProps {
   stop: () => void;
   input: string;
   isToolInProgress: boolean;
+  locale?: 'fr' | 'en';
 }
 
 export default function ChatBottombar({
@@ -25,6 +26,7 @@ export default function ChatBottombar({
   isLoading,
   stop,
   isToolInProgress,
+  locale = 'en',
 }: ChatBottombarProps) {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -61,7 +63,9 @@ export default function ChatBottombar({
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
             placeholder={
-              isToolInProgress ? 'Tool is in progress...' : 'Ask me anything'
+              isToolInProgress
+                ? (locale === 'fr' ? 'Traitement en cours...' : 'Tool is in progress...')
+                : (locale === 'fr' ? 'Posez-moi vos questions' : 'Ask me anything')
             }
             className="text-md w-full border-none bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none"
             disabled={isToolInProgress || isLoading}

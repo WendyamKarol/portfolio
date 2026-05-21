@@ -46,7 +46,7 @@ export const getResume = tool({
         lastUpdated: config.resume.lastUpdated,
         downloadUrl: config.resume.downloadUrl
       },
-      message: "Here's my full resume. I graduated Top 2 of my class at École Denis Diderot (Paris Cité University) in 2024, then built production AI systems at CGI/EDF, launched as a freelance engineer (including a mobile app deployed on the App Store), and joined Devoteam AI Apps where my team placed 3rd worldwide in their Global AI Hackathon. I'm certified Azure AI Engineer (AI-102), Google Cloud GenAI Leader, and AWS Cloud Practitioner. Available immediately for Data & AI roles."
+      message: "Here's my full resume. I graduated Top 2 of my class at École d'ingénieur Denis Diderot (Université Paris Cité), then built production AI systems at CGI/EDF, launched as a freelance engineer (including a mobile app deployed on the App Store), and joined Devoteam AI Apps where my team placed 3rd worldwide in their Global AI Hackathon. I'm certified Azure AI Engineer (AI-102), Google Cloud GenAI Leader, and AWS Cloud Practitioner. Available immediately for Data & AI roles."
     };
   },
 });

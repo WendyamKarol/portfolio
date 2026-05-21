@@ -66,7 +66,9 @@ export default function CareerDetailSheet({
             </h2>
             <p className="text-sm text-orange-300">{step.organization}</p>
             <p className="text-xs text-white/55">
-              {step.city}, {resolveLocalized(step.country, locale)}
+              {step.city === resolveLocalized(step.country, locale)
+                ? step.city
+                : `${step.city}, ${resolveLocalized(step.country, locale)}`}
             </p>
           </div>
           <Button

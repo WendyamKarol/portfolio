@@ -148,7 +148,7 @@ export default function CareerMap({
   const flyToStep = useCallback((step: CareerStep, map: mapboxgl.Map) => {
     map.flyTo({
       center: [step.lng, step.lat],
-      zoom: step.sideTrip ? 5 : step.type === 'education' ? 10 : 11,
+      zoom: step.type === 'education' ? 10 : 11,
       pitch: reducedMotionRef.current ? 0 : 45,
       bearing: 0,
       duration: reducedMotionRef.current ? 0 : FLY_TO_DURATION_MS,

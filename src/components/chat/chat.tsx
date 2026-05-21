@@ -57,7 +57,7 @@ const Avatar = dynamic<AvatarProps>(
               alt="Avatar"
               width={112}
               height={112}
-              className="h-full w-full scale-95 rounded-full object-cover object-[center_top_-5%]"
+              className="h-full w-full scale-95 rounded-full object-cover object-[center_top_-5%] mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
         </div>
@@ -87,6 +87,20 @@ const Chat = () => {
     tool: string;
   } | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [locale, setLocale] = useState<'fr' | 'en'>('fr');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('portfolio-locale');
+    if (saved === 'fr' || saved === 'en') setLocale(saved);
+  }, []);
+
+  const toggleLocale = () => {
+    setLocale(l => {
+      const next = l === 'fr' ? 'en' : 'fr';
+      localStorage.setItem('portfolio-locale', next);
+      return next;
+    });
+  };
 
   const {
     messages,
@@ -200,7 +214,7 @@ const Chat = () => {
         const preset = presetReplies[query];
         setPresetReply({
           question: query,
-          reply: preset.reply,
+          reply: locale === 'fr' ? (preset.replyFr ?? preset.reply) : preset.reply,
           tool: preset.tool,
         });
         setLoadingSubmit(false);
@@ -214,7 +228,7 @@ const Chat = () => {
         content: query,
       });
     },
-    [append, isToolInProgress]
+    [append, isToolInProgress, locale]
   );
 
   const submitQueryToAI = useCallback(
@@ -282,10 +296,19 @@ const Chat = () => {
         <div
           className={`transition-all duration-300 ease-in-out ${hasActiveTool ? 'pt-6 pb-0' : 'py-6'}`}
         >
-          <div className="flex justify-center">
+          <div className="relative flex items-center justify-center">
             <ClientOnly>
               <Avatar hasActiveTool={hasActiveTool} />
             </ClientOnly>
+            <button
+              onClick={toggleLocale}
+              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1 px-2.5 py-1 rounded-full border border-border bg-background/80 text-xs hover:bg-accent transition-colors select-none"
+              aria-label="Toggle language"
+            >
+              <span className={locale === 'fr' ? 'font-semibold text-foreground' : 'text-muted-foreground'}>FR</span>
+              <span className="text-muted-foreground">|</span>
+              <span className={locale === 'en' ? 'font-semibold text-foreground' : 'text-muted-foreground'}>EN</span>
+            </button>
           </div>
 
           <AnimatePresence>
@@ -321,9 +344,10 @@ const Chat = () => {
                 className="flex min-h-full items-center justify-center"
                 {...MOTION_CONFIG}
               >
-                <ChatLanding 
-                  submitQuery={submitQuery} 
+                <ChatLanding
+                  submitQuery={submitQuery}
                   handlePresetReply={handlePresetReply}
+                  locale={locale}
                 />
               </motion.div>
             ) : presetReply ? (
@@ -334,6 +358,7 @@ const Chat = () => {
                   tool={presetReply.tool}
                   onGetAIResponse={handleGetAIResponse}
                   onClose={() => setPresetReply(null)}
+                  locale={locale}
                 />
               </div>
             ) : errorMessage ? (
@@ -382,10 +407,10 @@ const Chat = () => {
                             setErrorMessage(null);
                             const preset = presetReplies["How can I reach you?"];
                             if (preset) {
-                              setPresetReply({ 
-                                question: "How can I reach you?", 
-                                reply: preset.reply, 
-                                tool: preset.tool 
+                              setPresetReply({
+                                question: "How can I reach you?",
+                                reply: locale === 'fr' ? (preset.replyFr ?? preset.reply) : preset.reply,
+                                tool: preset.tool
                               });
                             }
                           }}
@@ -418,6 +443,7 @@ const Chat = () => {
                   isLoading={isLoading}
                   reload={reload}
                   addToolResult={addToolResult}
+                  locale={locale}
                 />
               </div>
             ) : (
@@ -442,6 +468,7 @@ const Chat = () => {
             <HelperBoost
               submitQuery={submitQuery}
               handlePresetReply={handlePresetReply}
+              locale={locale}
             />
             <ChatBottombar
               input={input}
@@ -450,6 +477,7 @@ const Chat = () => {
               isLoading={isLoading}
               stop={handleStop}
               isToolInProgress={isToolInProgress}
+              locale={locale}
             />
           </div>
         </div>

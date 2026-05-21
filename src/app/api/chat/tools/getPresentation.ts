@@ -25,7 +25,7 @@ export const getPresentation = tool({
       interests: config.personality.interests,
       motivation: config.personality.motivation,
       certifications: config.skills.certifications ?? [],
-      professionalSummary: "I'm Karol Naze — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd, scholarship via competitive exam) then in Paris where I graduated Top 2 of my class at École Denis Diderot and delivered the valedictorian speech in 2024. Since then, I've shipped production-grade AI systems: a RAG chatbot for EDF, autonomous agents at Devoteam, and a mobile app deployed on the App Store. I hold certifications from Google, Microsoft (Azure AI-102), and AWS. I'm available immediately and looking for Data & AI engineering roles."
+      professionalSummary: "I'm Karol Naze — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd, scholarship via competitive exam) then in Paris where I graduated Top 2 of my class at École d'ingénieur Denis Diderot (Université Paris Cité) and delivered the valedictorian speech. Since then, I've shipped production-grade AI systems: a RAG chatbot for EDF, autonomous agents at Devoteam, and a mobile app deployed on the App Store. I hold certifications from Google, Microsoft (Azure AI-102), and AWS. I'm available immediately and looking for Data & AI engineering roles."
     };
   },
 });

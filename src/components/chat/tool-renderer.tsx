@@ -16,10 +16,12 @@ export interface ToolRendererInvocation {
 
 interface ToolRendererProps {
   toolInvocations: ToolRendererInvocation[];
+  locale?: 'fr' | 'en';
 }
 
 export default function ToolRenderer({
   toolInvocations,
+  locale = 'en',
 }: ToolRendererProps) {
   return (
     <div className="w-full transition-all duration-300">
@@ -44,7 +46,7 @@ export default function ToolRenderer({
                 key={toolCallId}
                 className="w-full overflow-hidden rounded-lg"
               >
-                <Presentation />
+                <Presentation locale={locale} />
               </div>
             );
 
@@ -65,7 +67,7 @@ export default function ToolRenderer({
           case 'getSkills':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
-                <Skills />
+                <Skills locale={locale} />
               </div>
             );
 

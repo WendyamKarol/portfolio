@@ -7,6 +7,7 @@ export interface PersonalInfo {
   phone?: string;
   handle: string;
   bio: string;
+  bioFr?: string;
   avatar: string;
   fallbackAvatar: string;
   languages?: { language: string; level: string }[];
@@ -251,12 +252,19 @@ export interface LandingContent {
   valueProposition: string;
 }
 
+export interface CvSkillCategory {
+  category: string;
+  categoryEn: string;
+  skills: string[];
+}
+
 export interface PortfolioConfig {
   job: Job;
   personal: PersonalInfo;
   education: Education;
   experience: Experience[];
   skills: Skills;
+  cv_skills?: CvSkillCategory[];
   projects: Project[];
   social: Social;
   personality: Personality;
@@ -290,6 +298,7 @@ export interface ProfileInfo {
   age: string;
   location: string;
   description: string;
+  descriptionFr?: string;
   src: string;
   fallbackSrc: string;
 }

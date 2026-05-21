@@ -20,9 +20,10 @@ interface PresetReplyProps {
   tool: string;
   onGetAIResponse: (question: string, tool: string) => void;
   onClose?: () => void;
+  locale?: 'fr' | 'en';
 }
 
-export function PresetReply({ question, reply, tool, onGetAIResponse, onClose }: PresetReplyProps) {
+export function PresetReply({ question, reply, tool, onGetAIResponse, onClose, locale = 'en' }: PresetReplyProps) {
   const [showAIOption, setShowAIOption] = useState(true);
 
   const handleGetAIResponse = () => {
@@ -36,7 +37,7 @@ export function PresetReply({ question, reply, tool, onGetAIResponse, onClose }:
       case 'getPresentation':
         return (
           <div className="w-full overflow-hidden rounded-lg mb-4">
-            <Presentation />
+            <Presentation locale={locale} />
           </div>
         );
       
@@ -50,7 +51,7 @@ export function PresetReply({ question, reply, tool, onGetAIResponse, onClose }:
       case 'getSkills':
         return (
           <div className="w-full rounded-lg mb-4">
-            <Skills />
+            <Skills locale={locale} />
           </div>
         );
       

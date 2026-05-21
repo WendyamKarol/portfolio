@@ -17,6 +17,7 @@ interface SimplifiedChatViewProps {
     chatRequestOptions?: ChatRequestOptions
   ) => Promise<string | null | undefined>;
   addToolResult?: (args: { toolCallId: string; result: string }) => void;
+  locale?: 'fr' | 'en';
 }
 
 const MOTION_CONFIG = {
@@ -34,6 +35,7 @@ export function SimplifiedChatView({
   isLoading,
   reload,
   addToolResult,
+  locale = 'en',
 }: SimplifiedChatViewProps) {
   if (message.role !== 'assistant') return null;
 
@@ -69,6 +71,7 @@ export function SimplifiedChatView({
           <div className="mb-4 w-full">
             <ToolRenderer
               toolInvocations={currentTool as ToolRendererInvocation[]}
+              locale={locale}
             />
           </div>
         )}

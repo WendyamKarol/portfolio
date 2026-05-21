@@ -32,15 +32,23 @@ import { presetReplies } from '@/lib/config-loader';
 interface HelperBoostProps {
   submitQuery?: (query: string) => void;
   handlePresetReply?: (question: string, reply: string, tool: string) => void;
+  locale?: 'fr' | 'en';
 }
 
-const questions = {
-  Me: 'Who are you? I want to know more about you.',
-  Projects: 'What are your projects? What are you working on right now?',
-  Skills: 'What are your skills? Give me a list of your soft and hard skills.',
+const presetMapping: Record<string, string> = {
+  Me: 'Who are you?',
+  Projects: 'What projects are you most proud of?',
+  Skills: 'What makes you a strong AI Software Engineer?',
   Resume: 'Can I see your resume?',
-  Contact:
-    'How can I reach you? What kind of project would make you say "yes" immediately?',
+  Contact: 'How can I reach you?',
+};
+
+const buttonLabels: Record<string, { en: string; fr: string }> = {
+  Me: { en: 'Me', fr: 'Moi' },
+  Projects: { en: 'Projects', fr: 'Projets' },
+  Skills: { en: 'Skills', fr: 'Compétences' },
+  Resume: { en: 'Resume', fr: 'CV' },
+  Contact: { en: 'Contact', fr: 'Contact' },
 };
 
 const questionConfig = [
@@ -51,62 +59,77 @@ const questionConfig = [
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ];
 
-// Helper drawer data
-const specialQuestions = [
+// EN keys for special highlighting
+const specialQuestionKeys = [
   'Who are you?',
-  'Can I see your resume?',
+  'What makes you a strong AI Software Engineer?',
   'What projects are you most proud of?',
-  'What are your skills?',
+  'Can I see your resume?',
+  'Are you available immediately?',
   'How can I reach you?',
 ];
 
-const questionsByCategory = [
+type BilingualQuestion = { en: string; fr: string };
+
+const questionsByCategory: {
+  id: string;
+  name: { en: string; fr: string };
+  icon: React.ElementType;
+  questions: BilingualQuestion[];
+}[] = [
   {
-    id: 'me',
-    name: 'Me',
+    id: 'intro',
+    name: { en: 'Intro', fr: 'Intro' },
     icon: UserSearch,
     questions: [
-      'Who are you?',
-      'What are your passions?',
-      'How did you get started in tech?',
-      'Where do you see yourself in 5 years?',
+      { en: 'Who are you?', fr: 'Qui es-tu ?' },
+      { en: 'Tell me about your background', fr: 'Parle-moi de ton parcours' },
+      { en: 'How did you get into AI?', fr: 'Comment es-tu arrivé dans l\'IA ?' },
+      { en: 'What sets you apart from other engineers?', fr: 'Qu\'est-ce qui te différencie des autres ingénieurs ?' },
     ],
   },
   {
     id: 'professional',
-    name: 'Professional',
+    name: { en: 'Professional', fr: 'Professionnel' },
     icon: BriefcaseIcon,
     questions: [
-      'Can I see your resume?',
-      'What makes you a valuable team member?',
-      'Where are you working now?',
-      'Why should I hire you?',
-      "What's your educational background?",
+      { en: 'Why did you leave your last role?', fr: 'Pourquoi as-tu quitté ton dernier poste ?' },
+      { en: 'What are you looking for in your next opportunity?', fr: 'Que recherches-tu dans ta prochaine opportunité ?' },
+      { en: "What's your greatest professional achievement?", fr: 'Quelle est ta plus grande réussite professionnelle ?' },
+      { en: 'Why should we hire you?', fr: 'Pourquoi devrions-nous t\'embaucher ?' },
     ],
   },
   {
     id: 'projects',
-    name: 'Projects',
+    name: { en: 'Projects', fr: 'Projets' },
     icon: CodeIcon,
-    questions: ['What projects are you most proud of?'],
-  },
-  {
-    id: 'skills',
-    name: 'Skills',
-    icon: GraduationCapIcon,
     questions: [
-      'What are your skills?',
-      'How was your experience working as freelancer?',
+      { en: 'What projects are you most proud of?', fr: 'De quels projets es-tu le plus fier ?' },
+      { en: 'Tell me about your RAG and LLM projects', fr: 'Parle-moi de tes projets RAG et LLM' },
+      { en: 'Have you shipped AI to production?', fr: 'As-tu mis de l\'IA en production ?' },
+      { en: 'Walk me through your most complex AI project', fr: 'Présente-moi ton projet IA le plus complexe' },
     ],
   },
   {
-    id: 'contact',
-    name: 'Contact & Future',
+    id: 'technical',
+    name: { en: 'Technical', fr: 'Technique' },
+    icon: GraduationCapIcon,
+    questions: [
+      { en: 'What makes you a strong AI Software Engineer?', fr: 'Qu\'est-ce qui fait de toi un bon ingénieur IA ?' },
+      { en: 'Can I see your resume?', fr: 'Puis-je voir ton CV ?' },
+      { en: "What's your experience with Generative AI?", fr: 'Quelle est ton expérience avec l\'IA générative ?' },
+      { en: 'Do you have experience with Azure / cloud platforms?', fr: 'As-tu de l\'expérience avec Azure / les plateformes cloud ?' },
+    ],
+  },
+  {
+    id: 'logistics',
+    name: { en: 'Logistics', fr: 'Logistique' },
     icon: MailIcon,
     questions: [
-      'How can I reach you?',
-      "What kind of project would make you say 'yes' immediately?",
-      'Where are you located?',
+      { en: 'Are you available immediately?', fr: 'Es-tu disponible immédiatement ?' },
+      { en: 'What kind of contract are you looking for?', fr: 'Quel type de contrat recherches-tu ?' },
+      { en: 'Where are you located? Open to remote?', fr: 'Où es-tu basé ? Ouvert au télétravail ?' },
+      { en: 'How can I reach you?', fr: 'Comment te contacter ?' },
     ],
   },
 ];
@@ -116,7 +139,7 @@ const AnimatedChevron = () => {
   return (
     <motion.div
       animate={{
-        y: [0, -4, 0], // Subtle up and down motion
+        y: [0, -4, 0],
       }}
       transition={{
         duration: 1.5,
@@ -134,35 +157,32 @@ const AnimatedChevron = () => {
 export default function HelperBoost({
   submitQuery,
   handlePresetReply,
+  locale = 'en',
 }: HelperBoostProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);
 
   const handleQuestionClick = (questionKey: string) => {
-    const question = questions[questionKey as keyof typeof questions];
-    
-    // Map question keys to preset replies that match our config exactly
-    const presetMapping: { [key: string]: string } = {
-      'Me': 'Who are you?',
-      'Projects': 'What projects are you most proud of?',
-      'Skills': 'What are your skills?',
-      'Resume': 'Can I see your resume?',
-      'Contact': 'How can I reach you?'
-    };
-    
     const presetKey = presetMapping[questionKey];
     if (presetKey && presetReplies[presetKey] && handlePresetReply) {
       const preset = presetReplies[presetKey];
-      handlePresetReply(presetKey, preset.reply, preset.tool);
+      const reply = locale === 'fr' ? (preset.replyFr ?? preset.reply) : preset.reply;
+      handlePresetReply(presetKey, reply, preset.tool);
     } else if (submitQuery) {
-      submitQuery(question);
+      // fallback: use a generic question text
+      submitQuery(questionKey);
     }
   };
 
-  const handleDrawerQuestionClick = (question: string) => {
-    // For drawer questions, always use AI response (no presets)
-    if (submitQuery) {
-      submitQuery(question);
+  const handleDrawerQuestionClick = (question: BilingualQuestion) => {
+    const displayText = locale === 'fr' ? question.fr : question.en;
+    // Check if there's a preset for this question (use EN key)
+    const preset = presetReplies[question.en];
+    if (preset && handlePresetReply) {
+      const reply = locale === 'fr' ? (preset.replyFr ?? preset.reply) : preset.reply;
+      handlePresetReply(question.en, reply, preset.tool);
+    } else if (submitQuery) {
+      submitQuery(displayText);
     }
     setOpen(false);
   };
@@ -190,12 +210,12 @@ export default function HelperBoost({
               {isVisible ? (
                 <>
                   <ChevronDown size={14} />
-                  Hide quick questions
+                  {locale === 'fr' ? 'Masquer les questions rapides' : 'Hide quick questions'}
                 </>
               ) : (
                 <>
                   <ChevronUp size={14} />
-                  Show quick questions
+                  {locale === 'fr' ? 'Afficher les questions rapides' : 'Show quick questions'}
                 </>
               )}
             </button>
@@ -217,7 +237,9 @@ export default function HelperBoost({
                   >
                     <div className="flex items-center gap-3 text-foreground">
                       <Icon size={18} strokeWidth={2} color={color} />
-                      <span className="text-sm font-medium">{key}</span>
+                      <span className="text-sm font-medium">
+                        {buttonLabels[key][locale]}
+                      </span>
                     </div>
                   </Button>
                 ))}
@@ -237,7 +259,6 @@ export default function HelperBoost({
                               className="h-[20px] w-[18px] text-foreground"
                               strokeWidth={2}
                             />
-                            {/*<span className="text-sm font-medium">More</span>*/}
                           </div>
                         </motion.div>
                       </Drawer.Trigger>
@@ -267,9 +288,10 @@ export default function HelperBoost({
                     {questionsByCategory.map((category) => (
                       <CategorySection
                         key={category.id}
-                        name={category.name}
+                        name={locale === 'fr' ? category.name.fr : category.name.en}
                         Icon={category.icon}
                         questions={category.questions}
+                        locale={locale}
                         onQuestionClick={handleDrawerQuestionClick}
                       />
                     ))}
@@ -288,14 +310,16 @@ export default function HelperBoost({
 interface CategorySectionProps {
   name: string;
   Icon: React.ElementType;
-  questions: string[];
-  onQuestionClick: (question: string) => void;
+  questions: BilingualQuestion[];
+  locale: 'fr' | 'en';
+  onQuestionClick: (question: BilingualQuestion) => void;
 }
 
 function CategorySection({
   name,
   Icon,
   questions,
+  locale,
   onQuestionClick,
 }: CategorySectionProps) {
   return (
@@ -313,9 +337,9 @@ function CategorySection({
         {questions.map((question, index) => (
           <QuestionItem
             key={index}
-            question={question}
+            displayText={locale === 'fr' ? question.fr : question.en}
             onClick={() => onQuestionClick(question)}
-            isSpecial={specialQuestions.includes(question)}
+            isSpecial={specialQuestionKeys.includes(question.en)}
           />
         ))}
       </div>
@@ -325,12 +349,12 @@ function CategorySection({
 
 // Component for each question item with animated chevron
 interface QuestionItemProps {
-  question: string;
+  displayText: string;
   onClick: () => void;
   isSpecial: boolean;
 }
 
-function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
+function QuestionItem({ displayText, onClick, isSpecial }: QuestionItemProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -355,7 +379,7 @@ function QuestionItem({ question, onClick, isSpecial }: QuestionItemProps) {
       <div className="flex items-center">
         {isSpecial && <Sparkles className="mr-2 h-4 w-4 text-primary-foreground" />}
         <span className={isSpecial ? 'font-medium text-primary-foreground' : 'text-foreground'}>
-          {question}
+          {displayText}
         </span>
       </div>
       <motion.div

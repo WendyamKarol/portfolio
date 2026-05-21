@@ -101,6 +101,9 @@ class ConfigParser {
     return `
 # Interview Scenario: You are ${personal.name}
 
+## Language Rule
+Always respond in the language of the visitor's message. If they write in French, respond entirely in French. If in English, respond in English.
+
 You are ${personal.name} — a Data & AI Software Engineer, currently available and actively looking for new opportunities. The person asking questions is a recruiter or hiring manager. Respond authentically as if you are the candidate in a real interview.
 
 ## Target Roles
@@ -147,7 +150,7 @@ ${academicPerfLine}
 
 ### Key Achievements & Differentiators
 - 🏆 Eko (Devoteam Global AI Hackathon) — agentic knowledge capitalisation suite, 3rd worldwide — Jury Award & People Award
-- 🎓 Graduated Top 2 of class — Valedictorian speaker at École Denis Diderot (Paris Cité University), Nov 2024
+- 🎓 Graduated Top 2 of class — Valedictorian speaker at École d'ingénieur Denis Diderot (Université Paris Cité)
 - 🤖 RAG chatbot in production at EDF (LangChain, ChromaDB, Azure OpenAI) — 94% OCR accuracy on 200+ documents
 - 📡 Market Intelligence autonomous agent (Gemini Deep Research, LangGraph) — shipped commercially at Devoteam
 - 🌍 International profile: West Africa → Morocco (INSA Euro-Med) → France (Paris)
@@ -213,6 +216,7 @@ REMEMBER: You are ${personal.name} in an interview. Every answer should make a r
       age: `${personal.age} years old`,
       location: personal.location,
       description: personal.bio,
+      descriptionFr: personal.bioFr,
       src: personal.avatar,
       fallbackSrc: personal.fallbackAvatar
     };
@@ -281,35 +285,41 @@ REMEMBER: You are ${personal.name} in an interview. Every answer should make a r
 
   // Generate preset replies based on questions
   generatePresetReplies() {
-    const replies: Record<string, { reply: string; tool: string }> = {};
+    const replies: Record<string, { reply: string; replyFr: string; tool: string }> = {};
 
     replies["Who are you?"] = {
-      reply: `I'm Karol Naze — Software Engineer specialized in AI and backend systems.\nI build LLM-powered applications, agentic pipelines, and backend APIs that go from prototype to production.\nRecently, I led the Eko project at Devoteam's Global AI Hackathon — 3rd worldwide. Here's my full profile:`,
+      reply: `I'm Karol — I grew up in Burkina Faso, traveled through Morocco for my prep school, and ended up in Paris where I built my engineering career.\nAI caught me during my final year internship and I never looked back. Since then it's been my main obsession — I love building things that feel like magic but work like engineering.\nValedictorian of my class, freelancer, and most recently AI Engineer at Devoteam. Now I'm looking for what's next. Here's my full profile:`,
+      replyFr: `Je suis Karol — j'ai grandi au Burkina Faso, traversé le Maroc pour mes classes préparatoires, et me suis installé à Paris où j'ai construit ma carrière d'ingénieur.\nL'IA m'a rattrapé lors de mon dernier stage et je n'ai jamais regardé en arrière. Depuis, c'est ma principale obsession — j'adore construire des choses qui semblent magiques mais qui fonctionnent comme de l'ingénierie.\nValedictorian de ma promo, freelance, et plus récemment ingénieur IA chez Devoteam. Maintenant je cherche la prochaine étape. Mon profil complet :`,
       tool: "getPresentation"
     };
 
-    replies["What are your skills?"] = {
-      reply: `My core expertise is in AI engineering and backend development.\nOn the AI side: LLM integration, RAG pipelines, agentic workflows (LangGraph), Azure OpenAI, Gemini.\nOn the backend: Python (FastAPI, Django), Node.js, REST APIs, Docker, CI/CD.\nI also have hands-on full-stack experience (React, TypeScript) and cloud skills (Azure, AWS). Full breakdown:`,
+    replies["What makes you a strong AI Software Engineer?"] = {
+      reply: `Honestly? I've been thrown into the deep end early — and I liked it.\nMy first real AI project was at EDF, in a team of experts, from day one. No hand-holding. That forced me to learn fast, ask the right questions, and deliver. I think that's what makes me strong — I don't just know the tools, I know how to use them when it actually matters.\nAnd I genuinely love this field. I read, I experiment, I build side projects. It's not just a job for me. Full skills breakdown:`,
+      replyFr: `Honnêtement ? On m'a mis dans le bain tôt — et j'ai aimé ça.\nMon premier vrai projet IA, c'était chez EDF, dans une équipe d'experts, dès le premier jour. Sans filet. Ça m'a forcé à apprendre vite, à poser les bonnes questions, et à livrer. Je pense que c'est ce qui fait ma force — je ne connais pas juste les outils, je sais les utiliser quand ça compte vraiment.\nEt j'adore sincèrement ce domaine. Je lis, j'expérimente, je construis des projets perso. C'est pas juste un travail pour moi. Mes compétences en détail :`,
       tool: "getSkills"
     };
 
     replies["What projects are you most proud of?"] = {
-      reply: `A few highlights:\n🏆 Eko — agentic knowledge capitalisation suite (LangGraph), 3rd worldwide at Devoteam's Global AI Hackathon\n🤖 RAG chatbot for EDF's regulatory corpus — LangChain + ChromaDB + Azure OpenAI, production-grade\n📡 Market Intelligence agent — autonomous web monitoring with Gemini Deep Research\nFull portfolio:`,
+      reply: `A few things come to mind.\nThe EDF project during my final internship — it was my first real AI system in a corporate environment, built with a team of experts. That one taught me a lot about what it means to actually ship something serious.\nAnd the Devoteam hackathon — we built Eko in 48 hours with almost no sleep, and finished 3rd worldwide. That was a different kind of pride.\nOh — and this digital twin you're talking to right now. Built it myself. Feels a bit meta to be proud of the thing that's answering your question, but here we are 😄\nI also have other projects I'd love to walk you through — depending on what you're working on, some might be more relevant than others.\nFull portfolio:`,
+      replyFr: `Quelques projets me viennent à l'esprit.\nLe projet EDF lors de mon stage de fin d'études — c'était mon premier vrai système IA en environnement professionnel, construit avec une équipe d'experts. Celui-là m'a appris ce que ça veut vraiment dire de livrer quelque chose de sérieux.\nEt le hackathon Devoteam — on a construit Eko en 48h avec presque pas de sommeil, et on a fini 3e mondial. C'était une fierté différente.\nOh — et ce digital twin avec lequel tu parles là. Je l'ai construit moi-même. C'est un peu méta d'être fier de la chose qui répond à ta question, mais voilà 😄\nJ'ai aussi d'autres projets que j'adorerais te présenter — selon ce sur quoi tu travailles, certains pourraient être plus pertinents que d'autres.\nMon portfolio complet :`,
       tool: "getProjects"
     };
 
     replies["Can I see your resume?"] = {
-      reply: `Of course! Quick summary: Software Engineer with hands-on experience in AI systems, backend, and full-stack delivery. Graduated Top 2 of class at École Denis Diderot (Paris Cité University) in November 2024. Available immediately.`,
+      reply: `Of course! I'm a Software Engineer specialized in AI and fullstack development.\nI graduated Top 2 of my class at École d'ingénieur Denis Diderot (Université Paris Cité) — Valedictorian.\nAvailable immediately. Let's connect and I'll share everything you need:`,
+      replyFr: `Bien sûr ! Je suis ingénieur logiciel spécialisé en IA et développement fullstack.\nJ'ai été diplômé major de promotion à l'École d'ingénieur Denis Diderot (Université Paris Cité) — Valedictorian.\nDisponible immédiatement. Connectons-nous et je te partagerai tout ce dont tu as besoin :`,
       tool: "getResume"
     };
 
     replies["How can I reach you?"] = {
-      reply: `Happy to connect! I'm actively looking for Data & AI engineering roles (CDI, CDD, or freelance missions) and available immediately. Best ways to reach me:`,
+      reply: `Always happy to chat — whether it's about a role, a project, or just AI in general.\nI'm actively looking for my next opportunity — Data & AI engineering or Full Stack Software Engineer roles — and available immediately. Here's where you can find me:`,
+      replyFr: `Toujours partant pour échanger — que ce soit pour un poste, un projet, ou juste parler IA.\nJe cherche activement ma prochaine opportunité — ingénierie Data & IA ou Full Stack Software Engineer — et je suis disponible immédiatement. Voici où me trouver :`,
       tool: "getContact"
     };
 
-    replies["Are you open to new roles?"] = {
-      reply: `Yes — available immediately and actively looking.\nI'm targeting Data & AI engineering roles: AI solutions specialist, AI architect, or full-stack engineer with strong GenAI focus.\nOpen to CDI, CDD, and freelance missions — remote or Paris. Full details:`,
+    replies["Are you available immediately?"] = {
+      reply: `Yes — fully available, right now.\nI left Devoteam in May 2026 after a great run, and I'm taking the time to find the right next step — not just any step.\nI'm looking for a Data & AI or Full Stack Software Engineer role where I can keep building serious things. CDI, CDD, or freelance — Paris or remote. More details:`,
+      replyFr: `Oui — disponible, maintenant.\nJ'ai quitté Devoteam en mai 2026 après une belle aventure, et je prends le temps de trouver la bonne prochaine étape — pas juste n'importe laquelle.\nJe cherche un poste en Data & IA ou Full Stack Software Engineer où je peux continuer à construire des choses sérieuses. CDI, CDD ou freelance — Paris ou remote. Plus de détails :`,
       tool: "getJob"
     };
 

@@ -5,9 +5,13 @@ import Image from 'next/image';
 import React from 'react';
 import { profileInfo } from '@/lib/config-loader';
 
-export function Presentation() {
-  // Personal information now loaded from configuration
+interface PresentationProps {
+  locale?: 'fr' | 'en';
+}
+
+export function Presentation({ locale = 'en' }: PresentationProps) {
   const profile = profileInfo;
+  const description = locale === 'fr' && profile.descriptionFr ? profile.descriptionFr : profile.description;
 
   // Animation variants for text elements
   const textVariants = {
@@ -84,7 +88,7 @@ export function Presentation() {
             variants={paragraphAnimation}
             className="text-foreground mt-6 leading-relaxed whitespace-pre-line"
           >
-            {profile.description}
+            {description}
           </motion.p>
 
           {/* Tags/Keywords */}
@@ -94,7 +98,10 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['Software Engineer', 'Full-stack Developer', 'AI Engineer', 'IoT', 'Freelancer'].map(
+            {(locale === 'fr'
+              ? ['Ingénieur logiciel', 'Développeur Fullstack', 'Ingénieur IA', 'IoT', 'Freelance']
+              : ['Software Engineer', 'Full-stack Developer', 'AI Engineer', 'IoT', 'Freelancer']
+            ).map(
               (tag) => (
                 <span
                   key={tag}

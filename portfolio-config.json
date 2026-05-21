@@ -12,7 +12,8 @@
       { "language": "English", "level": "Fluent — TOEIC 860/990" },
       { "language": "Spanish", "level": "B2" }
     ],
-    "bio": "Hey 👋 I’m Karol — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd) then in Paris (École Denis Diderot, Paris Cité University), where I graduated Top 2 of my class and delivered the valedictorian speech in 2024. I build LLM-powered applications, agentic pipelines, and APIs that go from prototype to production. Available immediately for Data & AI roles.",
+    "bio": "Hey 👋 I’m Karol — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd) then in Paris (École d’ingénieur Denis Diderot, Université Paris Cité), where I graduated Top 2 of my class and delivered the valedictorian speech. I build LLM-powered applications, agentic pipelines, and APIs that go from prototype to production. Available immediately for Data & AI roles.",
+    "bioFr": "Salut 👋 Je suis Karol — Ingénieur logiciel spécialisé en IA et développement fullstack. J’ai étudié au Maroc (INSA Euro-Méd) puis à Paris (École d’ingénieur Denis Diderot, Université Paris Cité), où j’ai été diplômé major de promotion et Valedictorian. Je construis des applications LLM, des agents IA autonomes et des APIs, de la conception à la production. Disponible immédiatement.",
     "avatar": "/profile.png",
     "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
   },
@@ -172,6 +173,38 @@
     ],
     "methods": ["System Design", "OOP", "Hexagonal Architecture", "Design Patterns", "Agile/Scrum"]
   },
+  "cv_skills": [
+    {
+      "category": "Expertises IA",
+      "categoryEn": "AI Expertise",
+      "skills": ["Conception & architecture de produits IA", "GenAI", "Systèmes RAG", "Agents IA", "Ingénierie de prompts"]
+    },
+    {
+      "category": "Méthodes & Principes",
+      "categoryEn": "Methods & Principles",
+      "skills": ["System Design", "POO", "Architecture hexagonale", "Design Patterns", "Agile/Scrum"]
+    },
+    {
+      "category": "Langages de programmation",
+      "categoryEn": "Programming Languages",
+      "skills": ["Python", "Java", "C", "C++", "JavaScript", "TypeScript", "HTML", "CSS"]
+    },
+    {
+      "category": "Frameworks",
+      "categoryEn": "Frameworks",
+      "skills": ["Node.js", "React", "Flask", "Django", "SpringBoot"]
+    },
+    {
+      "category": "Bases de données",
+      "categoryEn": "Databases",
+      "skills": ["SQL/PostgreSQL", "Redis", "MongoDB", "MariaDB"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "categoryEn": "Cloud & DevOps",
+      "skills": ["Azure", "AWS (EC2, SageMaker)", "GCP (Vertex AI)", "Docker", "Kubernetes", "Terraform", "CI/CD (GitHub Actions)"]
+    }
+  ],
   "projects": [
 
      {
@@ -566,7 +599,7 @@
     "fileType": "PDF",
     "lastUpdated": "2025",
     "fileSize": "2.1 MB",
-    "downloadUrl": "/Karol_Naze_Resume.pdf"
+    "downloadUrl": "/CV_Karol_Naze_FR.pdf"
   },
   "chatbot": {
     "name": "Karol",
@@ -578,41 +611,35 @@
     "topics": ["projects", "skills", "experience", "job", "contact", "fun_facts"]
   },
   "presetQuestions": {
-    "me": [
+    "intro": [
       "Who are you?",
-      "Tell me about yourself",
-      "What's your background?",
+      "Tell me about your background",
       "How did you get into AI?",
-      "Where do you see yourself in 3 years?"
+      "What sets you apart from other engineers?"
     ],
     "professional": [
-      "What are your skills?",
+      "Why did you leave your last role?",
+      "What are you looking for in your next opportunity?",
+      "What's your greatest professional achievement?",
+      "Why should we hire you?"
+    ],
+    "technical": [
+      "What are your core technical skills?",
       "Can I see your resume?",
-      "What's your AI and data experience?",
-      "What makes you a strong AI engineer?",
-      "Are you open to new roles?",
-      "Why did you leave Devoteam?",
-      "Why should I hire you?",
-      "What's your educational background?",
-      "What was your biggest professional achievement?",
-      "Do you have experience with Azure OpenAI?"
+      "What's your experience with Generative AI?",
+      "Do you have experience with Azure / cloud platforms?"
     ],
     "projects": [
       "What projects are you most proud of?",
       "Tell me about your RAG and LLM projects",
-      "Tell me about the Eko hackathon project",
-      "Have you shipped AI to production?"
+      "Have you shipped AI to production?",
+      "Walk me through your most complex AI project"
     ],
-    "contact": [
-      "How can I reach you?",
-      "What kind of opportunity would excite you?",
+    "logistics": [
       "Are you available immediately?",
-      "Where are you located?"
-    ],
-    "fun": [
-      "What motivates you?",
-      "Tell me something interesting about you",
-      "What do you do outside of work?"
+      "What kind of contract are you looking for?",
+      "Where are you located? Open to remote?",
+      "How can I reach you?"
     ]
   },
   "landing": {
@@ -644,7 +671,7 @@
         "id": "ouaga-bac",
         "order": 0,
         "type": "education",
-        "city": "Ouagadougou",
+        "city": "Burkina Faso",
         "country": { "fr": "Burkina Faso", "en": "Burkina Faso" },
         "countryCode": "BF",
         "lat": 12.3714,
@@ -680,19 +707,19 @@
         "lng": -5.0078,
         "period": "2019 – 2021",
         "title": { "fr": "Classes préparatoires", "en": "Preparatory Classes" },
-        "organization": "INSA Euromed — UEMF",
+        "organization": "INSA Euromed",
         "summary": {
-          "fr": "Bourse concours UEMF — Mathématiques & Informatique",
-          "en": "UEMF scholarship — Mathematics & Computer Science"
+          "fr": "7e INSA Français · Bourse d'Excellence UEMF",
+          "en": "7th French INSA · UEMF Excellence Scholarship"
         },
         "recruiterSkills": ["Mathématiques", "Informatique", "Autonomie"],
         "detail": {
           "description": {
-            "fr": "Classes préparatoires INSA Euromed avec bourse méritée.",
-            "en": "INSA Euromed preparatory classes with merit scholarship."
+            "fr": "Classes préparatoires à l'INSA Euromed (7e INSA Français), obtenues sur concours avec Bourse d'Excellence de l'Université Euroméditerranéenne de Fès.",
+            "en": "Preparatory classes at INSA Euromed (7th French INSA), admitted on merit with an Excellence Scholarship from the Université Euroméditerranéenne de Fès."
           },
           "highlights": [
-            { "fr": "Bourse UEMF", "en": "UEMF scholarship" }
+            { "fr": "Bourse d'Excellence UEMF", "en": "UEMF Excellence Scholarship" }
           ],
           "technologies": []
         },
@@ -708,23 +735,23 @@
         "lat": 48.842,
         "lng": 2.343,
         "period": "2021 – 2024",
-        "title": { "fr": "Ingénieur systèmes", "en": "Systems Engineer" },
-        "organization": "École Denis Diderot — Paris Cité",
+        "title": { "fr": "Ingénieur Système Informatique", "en": "Computer Systems Engineer" },
+        "organization": "École d'Ingénieur Denis Diderot — Université Paris Cité",
         "summary": {
-          "fr": "École Denis Diderot · Hub — stages aller-retour puis carrière IA",
-          "en": "École Denis Diderot · Hub — round-trip internships then AI career"
+          "fr": "Top 2 promo · ML, Algo & Génie logiciel · Chatbot NLP",
+          "en": "Top 2 of class · ML, Algo & Software Engineering · NLP Chatbot"
         },
-        "recruiterSkills": ["Python", "Machine Learning", "Systèmes embarqués"],
+        "recruiterSkills": ["Python", "Machine Learning", "Génie logiciel"],
         "detail": {
           "description": {
-            "fr": "3 ans à l'EIDD : hub école — chaque stage part de l'école et y revient (Créteil L1, Madrid L2, CGI L3).",
-            "en": "3 years at EIDD: school hub — each internship leaves from school and returns (Créteil Y1, Madrid Y2, CGI Y3)."
+            "fr": "Formation d'ingénieur généraliste informatique à l'Université Paris Cité. Socle solide en algorithmique, ML et développement logiciel. PFE : chatbot conversationnel IA (NLP, classification d'intentions, Python).",
+            "en": "Generalist computer engineering degree at Université Paris Cité. Strong foundations in algorithms, ML and software engineering. Final project: AI conversational chatbot (NLP, intent classification, Python)."
           },
           "highlights": [
             { "fr": "Top 2 promotion · Valedictorian", "en": "Top 2 of class · Valedictorian" },
-            { "fr": "3 stages aller-retour depuis l'école", "en": "3 round-trip internships from school" }
+            { "fr": "PFE : Chatbot IA conversationnel — NLP & Python", "en": "Final project: AI conversational chatbot — NLP & Python" }
           ],
-          "technologies": ["Python", "LangChain", "C", "C++", "RTOS"]
+          "technologies": ["Python", "NLP", "Machine Learning", "Java", "C++"]
         },
         "cvRef": { "section": "education", "index": 2 }
       },
@@ -735,29 +762,29 @@
         "sideTrip": true,
         "sideTripFromId": "paris-studies",
         "returnsToHubId": "paris-studies",
-        "city": "Créteil",
+        "city": "Paris",
         "country": { "fr": "France", "en": "France" },
         "countryCode": "FR",
         "lat": 48.7904,
         "lng": 2.4556,
         "period": "Jul – Sep 2022",
-        "title": { "fr": "Stage EC Data", "en": "EC Data Internship" },
+        "title": { "fr": "Stage 1A EIDD", "en": "Year 1 Internship — EIDD" },
         "organization": "EC Data Consulting",
         "summary": {
-          "fr": "1ère année · Refonte Java · Retour à l'école",
-          "en": "Year 1 · Java refactor · Back to school"
+          "fr": "1A EIDD · Data Management · Refonte Java",
+          "en": "Year 1 EIDD · Data Management · Java Refactor"
         },
-        "recruiterSkills": ["Java", "Clean Code", "UX"],
+        "recruiterSkills": ["Java", "Clean Code", "Data Management"],
         "detail": {
           "description": {
-            "fr": "Premier stage en France pendant la 1ère année. Créteil → école.",
-            "en": "First internship in France during year 1. Créteil → back to school."
+            "fr": "Premier stage en entreprise chez EC Data Consulting. Mission de Data Management : refonte complète d'un outil legacy Java en appliquant les principes Clean Code.",
+            "en": "First internship at EC Data Consulting. Data Management mission: full refactoring of a legacy Java tool applying Clean Code principles."
           },
           "highlights": [
-            { "fr": "Clean Code sur outil legacy", "en": "Clean Code on legacy tool" },
-            { "fr": "Tuteur Elie Chemali, Data Architect", "en": "Mentor Elie Chemali, Data Architect" }
+            { "fr": "Refonte Java d'un outil legacy — Data Management", "en": "Java refactoring of a legacy tool — Data Management" },
+            { "fr": "Clean Code appliqué sur base de code existante", "en": "Clean Code applied to existing codebase" }
           ],
-          "technologies": ["Java", "Clean Code", "UX Design"]
+          "technologies": ["Java", "Clean Code", "Data Management"]
         },
         "cvRef": { "section": "experience", "index": 6 }
       },
@@ -774,21 +801,21 @@
         "lat": 40.4168,
         "lng": -3.7038,
         "period": "Jun – Sep 2023",
-        "title": { "fr": "Stage TYPSA", "en": "TYPSA Internship" },
-        "organization": "Grupo TYPSA — TDS",
+        "title": { "fr": "Stage 2A EIDD — Data Software Engineer", "en": "Year 2 Internship — Data Software Engineer" },
+        "organization": "Grupo TYPSA — TDS (Typsa Digital Solutions)",
         "summary": {
-          "fr": "2ème année · Excel/VBA → Python/Django · Retour à l'école",
-          "en": "Year 2 · Excel/VBA → Python/Django · Back to school"
+          "fr": "Hydro App · Migration Excel/VBA → Python/Django · 120+ h/an · Dashboard React · Perf +40%",
+          "en": "Hydro App · Excel/VBA → Python/Django · 120+ hrs/yr saved · React dashboard · +40% backend perf"
         },
         "recruiterSkills": ["Python", "Django", "React"],
         "detail": {
           "description": {
-            "fr": "Stage international en 2ème année. Madrid → retour Paris pour finir le cursus.",
-            "en": "International internship in year 2. Madrid → back to Paris to finish the degree."
+            "fr": "Data Software Engineer chez Typsa Digital Solutions. Développement de Hydro App, un outil d'analyse de risque d'inondation. Remplacement des workflows Excel/VBA par Python/Django (120+ h/an économisées), construction d'un dashboard React et amélioration des performances backend de 40%.",
+            "en": "Data Software Engineer at Typsa Digital Solutions. Worked on Hydro App, a flood risk analysis tool. Replaced Excel/VBA workflows with Python/Django (120+ hrs/year saved), built a React dashboard and improved backend performance by 40%."
           },
           "highlights": [
-            { "fr": "Migration VBA → Python", "en": "VBA → Python migration" },
-            { "fr": "120+ h/an économisées", "en": "120+ hours/year saved" }
+            { "fr": "Hydro App — analyse de risque d'inondation · Migration Excel/VBA → Python/Django · 120+ h/an économisées", "en": "Hydro App — flood risk analysis · Excel/VBA → Python/Django · 120+ hrs/year saved" },
+            { "fr": "Dashboard React · Performance backend +40%", "en": "React dashboard · Backend performance +40%" }
           ],
           "technologies": ["Python", "Django", "React", "PostgreSQL"]
         },
@@ -801,27 +828,27 @@
         "sideTrip": true,
         "sideTripFromId": "paris-studies",
         "returnsToHubId": "paris-studies",
-        "city": "Puteaux",
+        "city": "Paris",
         "country": { "fr": "France", "en": "France" },
         "countryCode": "FR",
         "lat": 48.8847,
         "lng": 2.2389,
         "period": "Mar – Sep 2024",
-        "title": { "fr": "Stage CGI / EDF", "en": "CGI / EDF Internship" },
-        "organization": "CGI — La Défense",
+        "title": { "fr": "Stage PFE — Ingénieur IA", "en": "Final Year Internship — AI Engineer" },
+        "organization": "CGI pour EDF — La Défense",
         "summary": {
-          "fr": "3ème année · IA générative · RAG · Retour diplôme",
-          "en": "Year 3 · Generative AI · RAG · Back to graduate"
+          "fr": "PFE · Assistant IA génératif EDF · RAG · -70% temps de recherche · OCR automatique",
+          "en": "Final internship · Generative AI assistant for EDF · RAG · -70% search time · Automatic OCR"
         },
-        "recruiterSkills": ["RAG", "LangChain", "OCR"],
+        "recruiterSkills": ["RAG", "LangChain", "Generative AI"],
         "detail": {
           "description": {
-            "fr": "Entrée dans l'IA chez CGI/EDF pendant la dernière année. La Défense → retour école → diplôme nov. 2024.",
-            "en": "Entered AI at CGI/EDF during final year. La Défense → back to school → graduated Nov 2024."
+            "fr": "Stage de fin d'études chez CGI, en mission pour EDF. Contribution au développement d'un assistant IA génératif pour les équipes EDF : RAG, machine learning, extraction automatique de texte depuis documents scannés. Réduction du temps de recherche de 70%. Travail en méthode agile avec les experts EDF.",
+            "en": "Final year internship at CGI, on assignment for EDF. Contributed to building a generative AI assistant for EDF teams: RAG, machine learning, automatic text extraction from scanned documents. Reduced search time by 70%. Worked in agile with EDF experts."
           },
           "highlights": [
-            { "fr": "Chatbot RAG + OCR 94%", "en": "RAG chatbot + 94% OCR" },
-            { "fr": "Azure OpenAI · ChromaDB", "en": "Azure OpenAI · ChromaDB" }
+            { "fr": "Assistant IA génératif EDF · RAG · -70% temps de recherche", "en": "Generative AI assistant for EDF · RAG · -70% search time" },
+            { "fr": "Extraction automatique de texte depuis documents scannés", "en": "Automatic text extraction from scanned documents" }
           ],
           "technologies": ["Python", "LangChain", "ChromaDB", "Azure OpenAI", "React"]
         },
@@ -840,8 +867,8 @@
         "title": { "fr": "Micro-entrepreneur IA", "en": "AI Micro-entrepreneur" },
         "organization": "Freelance",
         "summary": {
-          "fr": "Diplômé · Quitte l'école · IA générative Europe & Afrique",
-          "en": "Graduated · Left school · Generative AI across Europe & Africa"
+          "fr": "Diplômé ingénieur · Apps IA end-to-end · Pipelines RAG clients",
+          "en": "Engineering graduate · End-to-end AI apps · RAG pipelines for clients"
         },
         "recruiterSkills": ["FastAPI", "LLM", "Full-stack"],
         "detail": {
@@ -861,7 +888,7 @@
         "id": "puteaux-devoteam",
         "order": 7,
         "type": "job",
-        "city": "Puteaux",
+        "city": "Paris",
         "country": { "fr": "France", "en": "France" },
         "countryCode": "FR",
         "lat": 48.892,
@@ -870,18 +897,18 @@
         "title": { "fr": "Ingénieur IA", "en": "AI Engineer" },
         "organization": "Devoteam AI Apps",
         "summary": {
-          "fr": "Accélérateurs IA · 3e mondial Hackathon Devoteam",
-          "en": "AI accelerators · Devoteam Hackathon 3rd worldwide"
+          "fr": "AI-Powered Fullstack · Accélérateurs IA · 3e mondial Hackathon Devoteam",
+          "en": "AI-Powered Fullstack · AI accelerators · Devoteam Hackathon 3rd worldwide"
         },
         "recruiterSkills": ["LangGraph", "Gemini", "NLP"],
         "detail": {
           "description": {
-            "fr": "Conception d'accélérateurs IA commercialisables : Market Intelligence, AO Crawler, Eko (Hackathon).",
-            "en": "Design of commercializable AI accelerators: Market Intelligence, AO Crawler, Eko (Hackathon)."
+            "fr": "Conception d'architectures IA-natives et d'environnements de développement augmentés (Claude Code, Cursor, Codex…). Mise en place de workflows humain+IA industrialisés, gouvernance IA (DORA, RGPD, conformité bancaire) et formation des équipes.",
+            "en": "Designed IA-native architectures and augmented development environments (Claude Code, Cursor, Codex…). Built industrialized human+AI workflows, IA governance frameworks (DORA, GDPR, banking compliance) and trained teams."
           },
           "highlights": [
-            { "fr": "Market Intelligence — agent veille", "en": "Market Intelligence — monitoring agent" },
-            { "fr": "Eko — 3e mondial · Jury & People Award", "en": "Eko — 3rd worldwide · Jury & People Award" }
+            { "fr": "Architectures IA-natives · Workflows humain+IA industrialisés", "en": "IA-native architectures · Industrialized human+AI workflows" },
+            { "fr": "3e mondial Hackathon Devoteam · Jury & People Award", "en": "3rd worldwide Devoteam Hackathon · Jury & People Award" }
           ],
           "technologies": ["Python", "LangGraph", "Gemini", "LangChain", "FastAPI"]
         },
