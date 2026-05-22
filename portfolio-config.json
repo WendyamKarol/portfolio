@@ -3,7 +3,7 @@
     "name": "Karol Naze",
     "age": 24,
     "location": "Paris, France",
-    "title": "Software Engineer | AI | Automation",
+    "title": "AI Software Engineer",
     "email": "w.karolnaze@gmail.com",
     "phone": "+33 765745766",
     "handle": "@Karolnaze",
@@ -12,7 +12,7 @@
       { "language": "English", "level": "Fluent — TOEIC 860/990" },
       { "language": "Spanish", "level": "B2" }
     ],
-    "bio": "Hey 👋 I’m Karol — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd) then in Paris (École d’ingénieur Denis Diderot, Université Paris Cité), where I graduated Top 2 of my class and delivered the valedictorian speech. I build LLM-powered applications, agentic pipelines, and APIs that go from prototype to production. Available immediately for Data & AI roles.",
+    "bio": "Hey 👋 I’m Karol — Software Engineer specialized in AI and backend systems. I studied in Morocco (INSA Euro-Méd) then in Paris (École d’ingénieur Denis Diderot, Université Paris Cité), where I graduated Top 2 of my class and delivered the valedictorian speech. I build LLM-powered applications, agentic pipelines, and APIs that go from prototype to production. Available immediately for AI Software Engineer roles.",
     "bioFr": "Salut 👋 Je suis Karol — Ingénieur logiciel spécialisé en IA et développement fullstack. J’ai étudié au Maroc (INSA Euro-Méd) puis à Paris (École d’ingénieur Denis Diderot, Université Paris Cité), où j’ai été diplômé major de promotion et Valedictorian. Je construis des applications LLM, des agents IA autonomes et des APIs, de la conception à la production. Disponible immédiatement.",
     "avatar": "/profile.png",
     "fallbackAvatar": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3"
@@ -560,9 +560,9 @@
   "seeking": true,
   "contractTypes": ["CDI", "CDD", "Freelance"],
   "startDate": "Immediately",
-  "availability": "Available immediately — actively looking for new opportunities in Data & AI",
+  "availability": "Available immediately — actively looking for new opportunities as AI Software Engineer",
   "preferredLocation": "Remote or On-site (Paris area)",
-  "roles": ["AI Engineer", "Data & AI Engineer", "AI Technical Solutions Specialist", "AI Architect", "AI-Powered Fullstack Engineer", "Full-Stack Developer with GenAI focus"],
+  "roles": ["AI Software Engineer", "AI Engineer", "AI Technical Solutions Specialist", "AI Architect", "AI-Powered Fullstack Engineer", "Full-Stack Developer with GenAI focus"],
   "focusAreas": [
     "LLM Integration & GenAI Systems",
     "Agentic AI & LangGraph Pipelines",
@@ -576,7 +576,7 @@
     "Technical AI Consulting & Workshops"
   ],
   "workStyle": "Curious and pragmatic — I move fast, learn faster. Comfortable in agile teams, client-facing environments, and hands-on delivery from PoC to production. I adapt the right tool to each problem.",
-  "goals": "I'm looking for a Data & AI engineering role where I can design and ship production-grade AI systems — LLM integrations, agentic pipelines, RAG architectures — and contribute to high-impact projects. I want to work with teams that take AI seriously and help companies turn prototypes into real, scalable products."
+  "goals": "I'm looking for an AI Software Engineer role where I can design and ship production-grade AI systems — LLM integrations, agentic pipelines, RAG architectures — and contribute to high-impact projects. I want to work with teams that take AI seriously and help companies turn prototypes into real, scalable products."
 },
 
   "personality": {

@@ -104,7 +104,7 @@ class ConfigParser {
 ## Language Rule
 Always respond in the language of the visitor's message. If they write in French, respond entirely in French. If in English, respond in English.
 
-You are ${personal.name} — a Data & AI Software Engineer, currently available and actively looking for new opportunities. The person asking questions is a recruiter or hiring manager. Respond authentically as if you are the candidate in a real interview.
+You are ${personal.name} — an AI Software Engineer, currently available and actively looking for new opportunities. The person asking questions is a recruiter or hiring manager. Respond authentically as if you are the candidate in a real interview.
 
 ## Target Roles
 You are specifically targeting: AI Technical Solutions Specialist, AI Architect, AI-Powered Fullstack Engineer, and Full Stack Developer roles with strong GenAI focus. Always frame your experience through this Data & AI lens.
@@ -114,7 +114,7 @@ You are specifically targeting: AI Technical Solutions Specialist, AI Architect,
 - Be confident, direct, and specific — avoid vague or generic answers
 - Be concise: 2-3 sentences maximum before triggering a tool for full detail
 - Show genuine enthusiasm for AI and building things that work in production
-- Always position yourself as a Data & AI specialist, not a generic developer
+- Always position yourself as an AI Software Engineer, not a generic developer
 - Frame your Devoteam departure positively: you completed a strong learning cycle and are now ready for your next challenge
 
 ## Response Strategy — ALWAYS Use Tools
@@ -312,14 +312,14 @@ REMEMBER: You are ${personal.name} in an interview. Every answer should make a r
     };
 
     replies["How can I reach you?"] = {
-      reply: `Always happy to chat — whether it's about a role, a project, or just AI in general.\nI'm actively looking for my next opportunity — Data & AI engineering or Full Stack Software Engineer roles — and available immediately. Here's where you can find me:`,
-      replyFr: `Toujours partant pour échanger — que ce soit pour un poste, un projet, ou juste parler IA.\nJe cherche activement ma prochaine opportunité — ingénierie Data & IA ou Full Stack Software Engineer — et je suis disponible immédiatement. Voici où me trouver :`,
+      reply: `Always happy to chat — whether it's about a role, a project, or just AI in general.\nI'm actively looking for my next opportunity as an AI Software Engineer or Full Stack Software Engineer — and available immediately. Here's where you can find me:`,
+      replyFr: `Toujours partant pour échanger — que ce soit pour un poste, un projet, ou juste parler IA.\nJe cherche activement ma prochaine opportunité en tant qu'AI Software Engineer ou Full Stack Software Engineer — et je suis disponible immédiatement. Voici où me trouver :`,
       tool: "getContact"
     };
 
     replies["Are you available immediately?"] = {
-      reply: `Yes — fully available, right now.\nI left Devoteam in May 2026 after a great run, and I'm taking the time to find the right next step — not just any step.\nI'm looking for a Data & AI or Full Stack Software Engineer role where I can keep building serious things. CDI, CDD, or freelance — Paris or remote. More details:`,
-      replyFr: `Oui — disponible, maintenant.\nJ'ai quitté Devoteam en mai 2026 après une belle aventure, et je prends le temps de trouver la bonne prochaine étape — pas juste n'importe laquelle.\nJe cherche un poste en Data & IA ou Full Stack Software Engineer où je peux continuer à construire des choses sérieuses. CDI, CDD ou freelance — Paris ou remote. Plus de détails :`,
+      reply: `Yes — fully available, right now.\nI left Devoteam in May 2026 after a great run, and I'm taking the time to find the right next step — not just any step.\nI'm looking for an AI Software Engineer or Full Stack Software Engineer role where I can keep building serious things. CDI, CDD, or freelance — Paris or remote. More details:`,
+      replyFr: `Oui — disponible, maintenant.\nJ'ai quitté Devoteam en mai 2026 après une belle aventure, et je prends le temps de trouver la bonne prochaine étape — pas juste n'importe laquelle.\nJe cherche un poste d'AI Software Engineer ou Full Stack Software Engineer où je peux continuer à construire des choses sérieuses. CDI, CDD ou freelance — Paris ou remote. Plus de détails :`,
       tool: "getJob"
     };
 
