@@ -93,10 +93,23 @@ export function PresetReply({ question, reply, tool, onGetAIResponse, onClose, l
       {/* If we have a component to render, show it like AI responses */}
       {presetComponent ? (
         <div className="w-full space-y-4">
+          {/* Reply text above the component */}
+          {reply && (
+            <ChatBubble variant="received">
+              <ChatBubbleMessage className="w-full">
+                <div className="px-2 py-1 space-y-2">
+                  {reply.split('\n').map((line, i) =>
+                    line.trim() ? <p key={i} className="text-sm leading-relaxed">{line}</p> : <br key={i} />
+                  )}
+                </div>
+              </ChatBubbleMessage>
+            </ChatBubble>
+          )}
+
           {/* Render the component */}
           {presetComponent}
-          
-          {/* Only show AI option when there's a major component - no text needed */}
+
+          {/* Only show AI option when there's a major component */}
           {showAIOption && (
             <ChatBubble variant="received">
               <ChatBubbleMessage className="bg-gray-50/80 dark:bg-gray-800/80 w-full">
