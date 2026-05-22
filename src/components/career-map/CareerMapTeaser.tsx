@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { ArrowRight, MapPin } from 'lucide-react';
 import { getConfig } from '@/lib/config-loader';
-import { getSortedSteps, resolveLocalized } from '@/lib/career-journey';
+import { resolveLocalized } from '@/lib/career-journey';
 import { Button } from '@/components/ui/button';
 
 const CareerGlobePreview = dynamic(
@@ -24,8 +24,6 @@ export default function CareerMapTeaser() {
 
   if (!journey?.enabled) return null;
 
-  const steps = getSortedSteps(journey);
-
   return (
     <section
       id="career-map"
@@ -43,9 +41,7 @@ export default function CareerMapTeaser() {
           <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-300">
             {resolveLocalized(journey.intro.subheadline, locale)}
           </p>
-          <p className="mt-2 text-sm text-slate-400">
-            {steps.length} steps · Burkina Faso → Morocco → France → Spain
-          </p>
+
           <Button asChild size="lg" className="mt-6 gap-2">
             <Link href="/journey">
               {resolveLocalized(journey.intro.ctaLabel, locale)}

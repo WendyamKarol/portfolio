@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import Chat from '@/components/chat/chat';
 import { ProLanding } from '@/components/landing/ProLanding';
 import CareerMapTeaser from '@/components/career-map/CareerMapTeaser';
+import LastProjects from '@/components/projects/LastProjects';
 
 function ChatSkeleton() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
     <div className="bg-background flex min-h-screen flex-col">
       <ProLanding />
       <CareerMapTeaser />
+      <LastProjects />
       <Suspense fallback={<ChatSkeleton />}>
         <div id="chat" className="flex h-screen min-h-[640px] shrink-0 snap-start flex-col">
           <Chat />

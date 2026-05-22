@@ -207,25 +207,72 @@
   ],
   "projects": [
 
-     {
+    {
+      "title": "CV Analyzer",
+      "category": "AI / HR Tech / Fullstack",
+      "description": "Web application that centralizes CVs, automatically analyzes profiles using AI, and compares them against job offers to identify the best candidates. Features intelligent chat with profiles, competency report generation, PowerPoint/PDF export, and Google Drive synchronization.",
+      "techStack": [
+        "Angular",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "OpenAI",
+        "Google Drive API",
+        "AWS"
+      ],
+      "date": "2026",
+      "status": "Completed",
+      "featured": true,
+      "links": [],
+      "images": [
+        {
+          "src": "/projects/cv-analyzer/screen-1.png",
+          "alt": "CV Analyzer dashboard — comparaisons récentes et chat avec les profils"
+        },
+        {
+          "src": "/projects/cv-analyzer/screen-2.png",
+          "alt": "CV Analyzer — gestion des profils CV avec compétences et spécialités"
+        },
+        {
+          "src": "/projects/cv-analyzer/screen-3.png",
+          "alt": "CV Analyzer — comparaison d'appels d'offres avec les CVs en 3 étapes"
+        }
+      ],
+      "achievements": [
+        "AI-powered CV analysis and automatic matching against job offers with compatibility scoring",
+        "Intelligent chat interface to query and compare multiple candidate profiles simultaneously",
+        "Automated generation of competency reports with PowerPoint/PDF export",
+        "Google Drive synchronization for seamless CV import and storage",
+        "Multi-step comparison wizard: select job offers → select CV profiles → AI analysis",
+        "Role-based access with Collaborateurs / Recrutement profile types"
+      ]
+    },
+
+    {
       "title": "AIPortfolio",
-      "category": "AI/Web Development",
-      "description": "Revolutionary AI-powered portfolio system: edit a single JSON file to get a complete interactive portfolio with an intelligent chatbot. Built with Next.js, React, and TypeScript. Features modern design, dynamic project showcases, and zero code required for updates.",
-      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "AI Integration"],
-      "date": "2025",
+      "category": "AI / Web Development",
+      "description": "AI-powered portfolio system: edit a single JSON config file to get a complete interactive portfolio with an intelligent bilingual chatbot (FR/EN). Built with Next.js 15, React 19, TypeScript, and Gemini 2.5 Flash. Features a career journey map (Mapbox), dynamic project showcases, and preset conversation flows.",
+      "techStack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Gemini 2.5 Flash", "Mapbox GL", "Framer Motion"],
+      "date": "2026",
       "status": "Completed",
       "featured": true,
       "links": [
         {
           "name": "Live Site",
-          "url": ""
+          "url": "https://karolnaze.dev"
         },
         {
           "name": "GitHub",
           "url": "https://github.com/WendyamKarol/portfolio/tree/main"
         }
       ],
-      "images": []
+      "images": [
+        {
+          "src": "/projects/ai-portfolio.png",
+          "alt": "AIPortfolio — chat interface with AI assistant and preset questions"
+        }
+      ]
     },
 
     { 
@@ -653,8 +700,8 @@
     "intro": {
       "headline": { "fr": "Mon parcours", "en": "My Journey" },
       "subheadline": {
-        "fr": "Du Burkina Faso à Paris — ingénieur full-stack & IA",
-        "en": "From Burkina Faso to Paris — full-stack & AI engineer"
+        "fr": "Chaque étape méritée. Toujours en mouvement.",
+        "en": "Every move earned. Still moving."
       },
       "ctaLabel": { "fr": "Découvrir mon parcours", "en": "Explore my journey" },
       "skipIntroLabel": { "fr": "Passer l'intro", "en": "Skip intro" }
