@@ -83,13 +83,11 @@ export const metadata: Metadata = {
   
   icons: {
     icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      }
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: "/favicon.ico?v=2",
-    apple: "/apple-touch-icon.svg?v=2",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   manifest: "/manifest.json",
   alternates: {
@@ -108,6 +106,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="canonical" href="https://karolnaze.dev" /> 
         <script
